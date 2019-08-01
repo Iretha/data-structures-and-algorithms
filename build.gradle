@@ -1,0 +1,33 @@
+apply plugin: 'java'
+
+group = 'com.smdev.ds'
+version = '0.0.1'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            java.srcDir file('src')
+        }
+    }
+
+    test {
+        java {
+            java.srcDir file('test')
+        }
+    }
+}
+
+dependencies {
+    // Lombok
+    annotationProcessor('org.projectlombok:lombok:1.18.8')
+    compileOnly('org.projectlombok:lombok:1.18.8')
+
+    //Apache
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+}
