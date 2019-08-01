@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Arrays
+title: Arrays & Dynamic Arrays
 parent: Home
 nav_order: 100
 description: "Arrays & ArrayLists"
@@ -9,19 +9,13 @@ permalink: /arrays
 
 # Data Structures & Algorithms
 {: .fs-9 }
-
-Each design pattern offers a reusable solution for a for common (repeatable) design problem. 
+ 
 {: .fs-6 .fw-300 }
 
-[Get started now](#data-structures-vs-apis){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View examples on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
-
+[View examples on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
 ---
 
-
-
 # Array (DS) & ArrayList(API)
-
-[Source Code]()
 
 ## Array
 * They can contain everything: **primitives** & wrappers, objects, custom types; 
@@ -52,7 +46,7 @@ It takes linear time O(N) to do the delete, where N depends on the number of the
 access(get/ set)|insert|delete
 ---|---|---
 O(1)|O(N)|O(N)
-fast|not fast|not fast
+fast|not that fast|not that fast
 
 ### Capacity vs Size (Length)
 As we said, the internal implementation of the ArrayList uses an array and arrays have fixed size.
