@@ -1,18 +1,31 @@
 ---
 layout: default
-title: Introduction
+title: Home
 nav_order: 0
 description: "Data Structures & Algorithms"
+has_children: true
 permalink: /
 ---
 
 # Data Structures & Algorithms
 {: .fs-9 }
 
-Each design pattern offers a reusable solution for a for common (repeatable) design problem. 
+
 {: .fs-6 .fw-300 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View examples on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](#data-structures-vs-apis){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View examples on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
+
+# Data Structures vs APIs
+
+APIs are build on top of the Data Structures and they add additional functionalities to the basic data structures.
+
+Data Structure| |APIs
+---|---|---
+Array|->|ArrayList
+Linked List|->|Stacks & Queues
+Binary Tree| -> | Binary Heap
+
+# [Array & ArrayList](/arrays)
 
