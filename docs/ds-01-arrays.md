@@ -7,28 +7,26 @@ description: "Arrays & ArrayLists"
 permalink: /arrays
 ---
 
-# Data Structures & Algorithms
+# Array (DS) & ArrayList(API)
 {: .fs-9 }
  
 {: .fs-6 .fw-300 }
 
-[View examples on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Source Code on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
 ---
 
-# Array (DS) & ArrayList(API)
-
-## Array
+## Arrays
 * They can contain everything: **primitives** & wrappers, objects, custom types; 
-* Arrays have FIXED size, that means that they can't grow
-* Random access to elements - you can use the index to access any element at any time; 
+* Arrays have **FIXED** size. That means that they don't grow.
+* They offer **random access to elements** - you can use the index to access any element at any time; 
 * **The access to any element of the array (get/ set) by index is a constant time O(1), which is extremely fast**
 
-## ArrayList (Dynamic Arrays)
+## ArrayLists (Dynamic Arrays)
 The internal implementation of the ArrayList uses an array.
 
-* They can contain: wrappers, objects, custom types; 
+* They may contain: wrappers, objects, custom types; 
 * They have initial capacity (of 10 elements) and can grow dynamically
-* Random access to elements - you can use the index to access any element at any time;
+* They offer **random access** to elements - you can use the index to access any element at any time;
 * **The access to any element of the array (get/ set) by index is a constant time O(1), which is extremely fast**
 * To **insert** an element at specific position, we need to:
     * shift all elements from the given position to the right, so that we make room for the new element
@@ -43,12 +41,13 @@ It takes linear time O(N) to do the insert, where N depends on the number of the
 
 It takes linear time O(N) to do the delete, where N depends on the number of the elements
 
-access(get/ set)|insert|delete
+ACCESS (GET/SET)|INSERT|DELETE
 ---|---|---
 O(1)|O(N)|O(N)
-fast|not that fast|not that fast
+constant| linear| linear
+ultra fast|not that fast|not that fast
 
-### Capacity vs Size (Length)
+### Capacity vs Size/ Length
 As we said, the internal implementation of the ArrayList uses an array and arrays have fixed size.
 The capacity is the size of the internal array, that will hold the elements, when we add them.
 This means that the capacity of the ArrayList shows the number of the elements the list can contain. 
