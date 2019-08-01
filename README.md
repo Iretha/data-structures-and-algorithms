@@ -1,6 +1,6 @@
 # Data Structures & Algorithms with Java
 
-Visit [https://github.com/Iretha/data-structures-and-algorithms](https://github.com/Iretha/data-structures-and-algorithms)
+Visit [https://iretha.github.io/data-structures-and-algorithms/](https://iretha.github.io/data-structures-and-algorithms/)
 for detailed explanation and code examples.
 
 ## Getting Started
