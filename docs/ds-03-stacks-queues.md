@@ -4,7 +4,7 @@ title: Stacks & Queues
 parent: Data Structures
 nav_order: 120
 description: "Stacks & Queues"
-permalink: /linked-lists
+permalink: /queues-stacks
 ---
 # Stacks & Queues
 {: .fs-9 }
@@ -42,9 +42,9 @@ Add/ remove/ peek/ isEmpty have constant time complexity  O(1).
 
 ACCESS/ FIND|INSERT|DELETE
 ---|---|---
-O(N)|O(1)|O(N)
-linear| constant| linear
-not that fast|ultra fast|not that fast
+O(N)|O(1)|O(1)
+linear| constant| constant
+not that fast|ultra fast|ultra fast
 
 ## Discussion
 
