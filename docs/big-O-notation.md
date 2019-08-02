@@ -99,6 +99,7 @@ Exponential times are really slow! Try to optimize them!
 ### Rules when calculating:
 * Drop the constants: O(3N) -> O(N)
 * Drop non-dominant: O(N + N^2) -> O(N^2)
+We consider dominant the collections, which are known to have more elements that the others in the same algorithm
 
 ## Complexity Cheat Sheets:
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
@@ -125,3 +126,7 @@ You should calculate the time (or memory) complexity of the algorithm or so call
 ### How to calculate the time (or memory) complexity
 Just memorize the cheat sheets with the complexity of most common operations/ algorithms.
 Remember the order of the complexity types in terms of efficiency and be careful if you have one or multiple collections.
+
+## Examples
+
+Check the sources for examples.

@@ -1,5 +1,7 @@
 package com.smdev.big_o_notation;
 
+import java.util.List;
+
 public class BigONotation {
 
     public void doExample_0(int a, int b) {
@@ -100,5 +102,49 @@ public class BigONotation {
             }
         }
         // => O(N * M)
+    }
+
+    public void doExample_11(List<String> list1) {
+        for (int i = 0; i < list1.size(); i++) { // O(N)
+            // do something here
+        }
+
+        List<String> list2 = list1.subList(0, list1.size() / 3);
+        for (int j = 0; j < list2.size() * 2; j++) { // O(M * 2) => 0(M)
+            // do something here
+        }
+
+        // => O(N + M) => 0(N) (because N is the dominant one, and we drop the other)
+    }
+
+    public void doExample_12(List<String> list1) {
+        List<String> list2 = list1.subList(0, list1.size() / 6);
+
+        for (int i = 0; i < list1.size(); i++) { // O(N)
+            for (int j = 0; j < list2.size() * 2; j++) { // O(M * 2) => 0(M)
+                // do something here
+            }
+        }
+
+        // => O(N * M) => 0(N) (because N is the dominant one, and we drop the other)
+    }
+
+    public void doExample_13(int n) {
+        for (int x = n; x >= 1; x = x / 2) { // O(log N)
+            // do something here
+        }
+
+        // => O(log N)
+    }
+
+    public void doExample_14(int n) {
+        for (int i = 0; i < n; i++) { // O(N)
+            // do something here
+        }
+        for (int x = n; x >= 1; x = x / 2) { // O(log N)
+            // do something here
+        }
+
+        // => O(N + log N) => O(N) (drop the non-dominant)
     }
 }
