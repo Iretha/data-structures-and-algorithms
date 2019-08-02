@@ -105,15 +105,15 @@ Exponential times are really slow! Try to optimize them!
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Complexity Chart
-![Complexity Chart](https://github.com/Iretha/data-structures-and-algorithms/tree/master/docs/images/bigO_complexity.png "Big O Complexity")
+![Complexity Chart](images/bigO_complexity.png)
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Common Data Structure Operations
-![Common Data Structure Operations](https://github.com/Iretha/data-structures-and-algorithms/tree/master/docs/images/ds-complexity.png "Big O Complexity")
+![Common Data Structure Operations](images/ds-complexity.png)
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Array Sorting Algorithms
-![Array Sorting Algorithms](https://github.com/Iretha/data-structures-and-algorithms/tree/master/docs/images/array-complexity-sorting-alg.png "Big O Complexity")
+![Array Sorting Algorithms](images/array-complexity-sorting-alg.png)
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ## Discussion
