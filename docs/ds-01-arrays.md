@@ -19,7 +19,7 @@ permalink: /arrays
 * They offer **random access to elements** - you can use the index to access any element at any time; 
 * **The access to any element of the array (get/ set) by index is a constant time O(1), which is extremely fast**
 
-## ArrayLists (Dynamic Arrays)
+## ArrayLists (aka. Dynamic Arrays)
 The internal implementation of the ArrayList uses an array.
 
 * They may contain: wrappers, objects, custom types; 
@@ -48,6 +48,23 @@ constant| linear| linear
 ultra fast|not that fast|not that fast
 
 ## Discussion
+### Array vs ArrayList (also known as Dynamic Arrays)
+* Array is the basic Data Structure, while ArrayList is the API (a wrapper around the array), build on top of the arrays, with some additional functionality.
+
+* Arrays can contain primitives, while ArrayLists contain only objects.
+
+* Arrays have fixed size and can't grow, while ArrayList have fixed capacity, that can grow dynamically.
+
+* Arrays & ArrayLists offer random access to elements (by index), whereas the access takes constant time O(1).
+
+* Arrays & ArrayLists take linear time O(N) to insert/ delete element, because we have to shift all elements right or left.
+
+* Array List takes more memory most of the time, because if the capacity is 2000, but we may have 1001 elements.
+
+### When to choose Array or ArrayList
+Use array, when you know the exact number of the elements and don't need the additional functionality like "contains" etc.. 
+Otherwise use ArrayList.
+
 ### Capacity vs Size/ Length
 As we said, the internal implementation of the ArrayList uses an array and arrays have fixed size.
 The capacity is the size of the internal array, that will hold the elements, when we add them.

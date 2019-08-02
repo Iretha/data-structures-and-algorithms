@@ -29,6 +29,7 @@ Cons:
 * Access (Get/ Set) is linear O(N), because we have to iterate all the elements, starting from the head
 
 **Stacks & Queues are internally implemented with Linked Lists.**
+
 **There are also circular Linked Lists. They do not have head and tail.**
 
 ## Summary
@@ -39,8 +40,35 @@ O(N)|O(1)|O(N)
 linear| constant| linear
 not that fast|ultra fast|not that fast
 
-## Simple Implementation
-### Linked List
+## Discussion
+
+### Linked List vs Double Linked List
+Double Linked Lists are same as Linked Lists with the only difference, that each Node keeps references to the next node and 
+to the previous node. This helps you optimize part of the operations.
+
+### Array vs ArrayList vs Linked List
+
+* Array and Linked List are the basic Data Structures, while ArrayList is the API, build on top of the arrays, with some additional functionality.
+
+* Arrays can contain primitives, while ArrayLists & Linked Lists contain only objects.
+
+* Arrays have fixed size, ArrayList have fixed capacity, that can grow dynamically and the size of the LinkedLists grow incrementally with the elements
+
+* Arrays & ArrayLists offer random access to elements (by index), whereas the access takes constant time O(1). LinkedLists don't and the access takes linear time O(N)
+
+* Arrays & ArrayLists take linear time O(N) to insert/ delete element, because we have to shift all elements right or left. Inserts & Deletes in front of the LinkedLists takes constant time O(1).
+
+* Array List takes more memory most of the time, because i.e. if the capacity is 2000, but we may have 1001 elements.
+
+ -|Array| ArrayList| Linked List
+---|---|---|---
+FIXED SIZE| YES| NO (grows dynamically)| NO (grows incrementally)
+ALLOCATED MEMORY|exact|more (because of the capacity)|exact
+RANDOM ACCESS (BY INDEX)| YES| YES| NO
+GET/SET| O(1)|O(1)|FRONT: O(1) / INNER & BACK: O(N)
+INSERT/DELETE| O(N)|O(N)|FRONT: O(1) / INNER & BACK: O(N)
+CONTAIN PRIMITIVES| YES| NO| NO 
+### Simple Implementation of Linked List
 ```java
 public class LinkedList<T> {
 
@@ -198,7 +226,7 @@ public class LinkedList<T> {
     }
 }
 ```
-### Double Linked List
+### Simple Implementation of Double Linked List
 ```java
 public class DoubleLinkedList<T> {
 
