@@ -40,6 +40,7 @@ It takes linear time O(N) to do the insert, where N depends on the number of the
 It takes linear time O(N) to do the delete, where N depends on the number of the elements
 
 ## Summary
+
 ACCESS (GET/SET)|INSERT|DELETE
 ---|---|---
 O(1)|O(N)|O(N)
