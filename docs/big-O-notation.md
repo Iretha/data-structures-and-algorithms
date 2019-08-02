@@ -116,6 +116,9 @@ Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 ![Array Sorting Algorithms](images/array-complexity-sorting-alg.png)
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
+
+[Download the Cheat Sheet as PDF](http://www.souravsengupta.com/cds2016/lectures/Complexity_Cheatsheet.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 ## Discussion
 
 ### How we can compare the runtime characteristics of an algorithm or operations in a Data Structure
