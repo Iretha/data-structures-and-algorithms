@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Arrays & Dynamic Arrays
+title: Linked Lists & Double Linked
 parent: Home
 nav_order: 110
-description: "Arrays & ArrayLists"
+description: "Linked Lists & Double Linked Lists"
 permalink: /linked-lists
 ---
 # Linked Lists
