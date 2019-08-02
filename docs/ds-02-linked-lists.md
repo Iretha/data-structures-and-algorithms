@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Linked Lists & Double Linked
+title: Linked Lists (incl. Double)
 parent: Home
 nav_order: 110
 description: "Linked Lists & Double Linked Lists"
@@ -60,7 +60,7 @@ to the previous node. This helps you optimize part of the operations.
 
 * Array List takes more memory most of the time, because i.e. if the capacity is 2000, but we may have 1001 elements.
 
- -|Array| ArrayList| Linked List
+o|Array| ArrayList| Linked List
 ---|---|---|---
 FIXED SIZE| YES| NO (grows dynamically)| NO (grows incrementally)
 ALLOCATED MEMORY|exact|more (because of the capacity)|exact
@@ -68,6 +68,7 @@ RANDOM ACCESS (BY INDEX)| YES| YES| NO
 GET/SET| O(1)|O(1)|FRONT: O(1) / INNER & BACK: O(N)
 INSERT/DELETE| O(N)|O(N)|FRONT: O(1) / INNER & BACK: O(N)
 CONTAIN PRIMITIVES| YES| NO| NO 
+
 ### Simple Implementation of Linked List
 ```java
 public class LinkedList<T> {
