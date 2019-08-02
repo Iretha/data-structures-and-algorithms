@@ -98,8 +98,11 @@ Exponential times are really slow! Try to optimize them!
 
 ### Rules when calculating:
 * Drop the constants: O(3N) -> O(N)
-* Drop non-dominant: O(N + N^2) -> O(N^2)
-We consider dominant the collections, which are known to have more elements that the others in the same algorithm
+* Drop non-dominant: 
+    - O(N + N^2) -> O(N^2) 
+    - O(M + N) -> O (N) (if we know something about both collections and we know which is dominant, if not - we should leave both)
+
+**We consider as a dominant, the one that has more elements or needs the most operations**
 
 ## Complexity Cheat Sheets:
 Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
@@ -113,7 +116,7 @@ Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 ### Array Sorting Algorithms
 ![Array Sorting Algorithms](images/array-complexity-sorting-alg.png)
 
-[Download as a PDF from souravsengupta.com](http://www.souravsengupta.com/cds2016/lectures/Complexity_Cheatsheet.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Download as PDF from www.souravsengupta.com](http://www.souravsengupta.com/cds2016/lectures/Complexity_Cheatsheet.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ## Discussion
 
@@ -129,4 +132,4 @@ Remember the order of the complexity types in terms of efficiency and be careful
 
 ## Examples
 
-Check the sources for examples.
+Check the [sources](https://github.com/Iretha/data-structures-and-algorithms/tree/master/src/com/smdev/big_o_notation) for examples.
