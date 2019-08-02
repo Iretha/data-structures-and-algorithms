@@ -79,7 +79,6 @@ the time also increases/ decreases with double rate.
 
 I.e. when a function calls itself twice (recursion when calculating fibonacci) or iterating binary trees (because they have 2 paths - left & right)
 
-
 ### Ordering (from fastest to slowest):
 1). Constant: O(1), Logarithmic: O(log n)
 
@@ -106,18 +105,14 @@ Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Complexity Chart
 ![Complexity Chart](images/bigO_complexity.png)
-Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Common Data Structure Operations
 ![Common Data Structure Operations](images/ds-complexity.png)
-Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
 ### Array Sorting Algorithms
 ![Array Sorting Algorithms](images/array-complexity-sorting-alg.png)
-Source: [www.bigocheatsheet.com](https://www.bigocheatsheet.com/)
 
-
-[Download the Cheat Sheet as PDF](http://www.souravsengupta.com/cds2016/lectures/Complexity_Cheatsheet.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Download as a PDF from souravsengupta.com](http://www.souravsengupta.com/cds2016/lectures/Complexity_Cheatsheet.pdf){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ## Discussion
 
