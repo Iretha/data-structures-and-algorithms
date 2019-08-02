@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Linked Lists (incl. Double)
-parent: Home
+parent: Data Structures
 nav_order: 110
 description: "Linked Lists & Double Linked Lists"
 permalink: /linked-lists

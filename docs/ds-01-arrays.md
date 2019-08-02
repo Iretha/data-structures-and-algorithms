@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Arrays & Dynamic Arrays
-parent: Home
+parent: Data Structures
 nav_order: 100
 description: "Arrays & ArrayLists"
 permalink: /arrays
