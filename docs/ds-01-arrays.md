@@ -11,8 +11,6 @@ permalink: /arrays
 {: .fs-9 }
  
 {: .fs-6 .fw-300 }
-
-[Source Code on GitHub](https://github.com/Iretha/data-structures-and-algorithms){: .btn .fs-5 .mb-4 .mb-md-0 }
 ---
 
 ## Arrays
@@ -41,12 +39,14 @@ It takes linear time O(N) to do the insert, where N depends on the number of the
 
 It takes linear time O(N) to do the delete, where N depends on the number of the elements
 
+## Summary
 ACCESS (GET/SET)|INSERT|DELETE
 ---|---|---
 O(1)|O(N)|O(N)
 constant| linear| linear
 ultra fast|not that fast|not that fast
 
+## Discussion
 ### Capacity vs Size/ Length
 As we said, the internal implementation of the ArrayList uses an array and arrays have fixed size.
 The capacity is the size of the internal array, that will hold the elements, when we add them.
