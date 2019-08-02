@@ -6,21 +6,24 @@ nav_order: 130
 description: "Hash Tables"
 permalink: /hash-tables
 ---
-# Hash Tables (Dictionaries)
+# Hash Table (HashMap/ Dictionary)
 {: .fs-9 }
  
 Hash Tables keep values in (key, value) form for super fast lookup with a constant complexity time O(1).
 {: .fs-6 .fw-300 }
 ---
-## How are the hash tables implemented?
+## How are the Hash Tables implemented?
 Hash Tables use array of linked lists for their internal implementation.
 The key undergoes a hashing function, that returns a hash code as a result (a numeric representation of the key).
 Then the hash code is used to calculate the index of the array, where the element will be stored. 
+
 The formula is:
-> INDEX = HASH CODE % CAPACITY
->
-> The hashcode is divided by the capacity and the remainder is the index. This can return a negative number and we should 
-> get the absolute value as indexes can't be negative. We will simply use Math.abs(idx) to be sure that we will always have a positive index.
+```
+INDEX = HASH CODE % CAPACITY
+
+The hashcode is divided by the capacity and the remainder is the index. This can return a negative number and we should 
+get the absolute value as indexes can't be negative. We will simply use Math.abs(idx) to be sure that we will always have a positive index.
+```
 
 Sometimes collisions may occur. A collision is when we get the same index for multiple keys.
 To handle the collisions, we use linked lists. If we get multiple elements with the same index, 
@@ -43,7 +46,6 @@ o| SEARCH|INSERT|DELETE
 ---|---|---|---
 A GOOD hash func (few collisions)|O(1)|O(1)|O(1)
 A BAD hash func (a lot collisions)|O(N)|O(N)|O(N)
-
 
 * Bad HashTable means:
 
