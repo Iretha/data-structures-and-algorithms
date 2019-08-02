@@ -14,11 +14,11 @@ Each node has two parts - the data and a pointer, which points to the next node.
 The very first element of the list is called "Head" and the very last is called "Tail".
 {: .fs-6 .fw-300 }
 ---
-When we manipulate the elements (adding, removing, switching places), we actually manipulate
-the links (the pointers). 
-
 Double Linked Lists are same as Linked Lists with the only difference, that each Node keeps references to the next node and 
 to the previous node. This helps you optimize part of the operations.
+
+When we manipulate the elements (adding, removing, switching places), we actually manipulate
+the links (the pointers). 
 
 Pros:
 * Super fast Inserts/ Deletes (at front) - constant time O(1)

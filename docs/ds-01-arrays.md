@@ -7,10 +7,13 @@ description: "Arrays & ArrayLists"
 permalink: /arrays
 ---
 
-# Array (DS) & ArrayList(API)
+# Array & ArrayList
 {: .fs-9 }
- 
+
+ Array is the basic Data Structure, while ArrayList is the API (a wrapper around the array), 
+ build on top of the arrays, with some additional functionality (self-resizing, operations: contains, add, remove).
 {: .fs-6 .fw-300 }
+
 ---
 
 ## Arrays
