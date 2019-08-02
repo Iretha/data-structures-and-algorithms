@@ -16,7 +16,7 @@
 
 remote_theme: pmarsceill/just-the-docs
 
-title: Data Structures & Algorithms
+title: Data Structs & Algorithms
 description: Collection of Data Structures & Algorithms
 #baseurl: "/design-patterns/" # the subpath of your site, e.g. /blog
 #url: "http://iretha.github.io/design-patterns" # the base hostname & protocol for your site, e.g. http://example.com

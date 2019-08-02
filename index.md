@@ -17,16 +17,5 @@ permalink: /
 
 ---
 
-# Data Structures vs APIs
 
-APIs are build on top on the Data Structures and they add additional functionalities to the basic data structures.
-
-Data Structure| |APIs
----|---|---
-Array|->|ArrayList
-Linked List|->|Stacks & Queues
-Binary Tree| -> | Binary Heap
-
-# Data Structures
-## [Array & ArrayList](https://iretha.github.io/data-structures-and-algorithms/arrays)
 
