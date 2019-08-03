@@ -19,7 +19,7 @@ Then the hash code is used to calculate the index of the array, where the elemen
 
 The formula is:
 ```
-INDEX = HASH CODE % CAPACITY
+INDEX = Math.abs(HASH CODE % CAPACITY)
 
 The hashcode is divided by the capacity and the remainder is the index. This can return a negative number and we should 
 get the absolute value as indexes can't be negative. We will simply use Math.abs(idx) to be sure that we will always have a positive index.
