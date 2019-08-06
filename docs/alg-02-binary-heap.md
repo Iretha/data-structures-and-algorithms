@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Binary Heap
+title: Binary Heap/ HeapSort
 parent: Algorithms
 nav_order: 220
 description: "Binary Heap"
@@ -14,7 +14,8 @@ It supports supper fast search and extraction of the MIN/MAX value, which has ti
 {: .fs-6 .fw-300 }
 ---
 
-The Binary Heap is an example of a Complete Binary Tree (all levels are completely filled, except possibly the last level).
+The Binary Heap (HeapSort) is an example of a Complete Binary Tree (all levels are completely filled, except possibly the last level).
+It represents a sorting algorithm.
 
 ## Types of Binary Trees
 There are two types of binary heaps. Trees, which root holds the MAX value or the MIN value.

@@ -39,7 +39,7 @@ Glossary:
 * the height is 2 => all levels - 1 => 3 - 1 = 2
 
 ## Types of Binary Trees
-* Full Binary Tree (also known as "perfect" or "complete") - each node has 0 or 2 binary children (no single nodes) 
+* Full Binary Tree (also known as "strictly") - each node has 0 or 2 binary children (no single nodes) 
 ```
              17
            /   \   
@@ -79,16 +79,51 @@ An example of a complete binary tree is the binary heap.
 
 * Balanced Binary Tree - the left and right subtrees' heights differ by at most 1 AND left tree is balanced AND right tree is balanced
 * Unbalanced Binary Tree - when the left and right subtrees differ in height by more than 1 and when left or right (or both) subtree is non balanced
-
+* A degenerate (or pathological) tree - every node has max. up to 1 child
+```
+       15
+      /
+    25
+     \
+     30
+      \
+      45 
+```
+* Skewed Binary Tree (Left/ Right)
+```
+    15
+     \
+     25
+      \
+      30
+```
+```
+    15
+    /
+   25
+   /
+ 30
+```
 ## Traverse Algorithms (Search Algorithms):
 * Breadth First (Shortest Path Algorithms use it) - we search level by level, starting from root.
 This means that we start from root (lvl 0), then we continue with the children of the root node (level 1), then with 
 level 3 etc.
 * Depth First - we start from root(level 0) and then we go deep to the highest level (level N)
 
+## Depth First Traversal Types:
+There are 3 different ways, depending ot when you visit root:
+```
+    a
+   / \
+  b   c
+```
+* **In**order (Left, **Root**, Right) : b -> a -> c -> Print the nodes in sorted order
+* **Pre**order (**Root**, Left, Right) : a -> b -> c
+* **Post**order (Left, Right, **Root**) : b -> c -> a
+
 ## Algorithms, that use Binary Trees
 
-Name|Summary|Usage
----|---|---
-[Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorted Binary Tree with super fast search/insert/delete of O(log N).|in many search applications, where data is changing
-[Binary Heap MAX/MIN](https://iretha.github.io/data-structures-and-algorithms/binary-heap)| To find/ extract MAX/MIN value super fast with complexity of O(1) | Priority Queues, Scheduling, Routing, Shortest Path Alg.
+Name|Algorithm Type|Summary|Usage
+---|---|---|---
+[Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorting Alg.|Sorted Binary Tree with super fast search/insert/delete of O(log N).|In many search applications, where data constantly changes. It will be sorted, while added.
+[Binary Heap MAX/MIN](https://iretha.github.io/data-structures-and-algorithms/binary-heap)|Sorting Alg.|To find/ extract MAX/MIN value super fast with complexity of O(1) | Priority Queues (esp. OS & kernels), Scheduling, Routing, Shortest Path Alg.

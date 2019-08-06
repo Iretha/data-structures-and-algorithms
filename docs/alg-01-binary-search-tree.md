@@ -13,6 +13,7 @@ It's a type of binary tree, which allows only unique keys of the nodes and the k
 It supports super fast search/insert/delete with complexity time of O(log N).
 {: .fs-6 .fw-300 }
 ---
+Binary Search Tree (BST) is a sorting algorithm.
 
 It's a binary **sorted** tree, that contains elements with unique keys and has super fast search/insert/delete with complexity time of O(log N),
 because when every time we inter the recursion with reduce the number of elements to traverse by half!
