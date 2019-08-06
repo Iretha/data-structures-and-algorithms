@@ -37,7 +37,8 @@ same members again and again.
 
 ### Recursive Implementation with Memoization
 Once calculated, we can store the value in an array and return the value if it's already present.
-This will reduce the time complexity to O(N).
+This is an optimization technique called "Memoization".
+With memoization we the time complexity will be reduced to O(N).
 ```java
     private static final int[] CACHE = new int[1001];
 
