@@ -2,18 +2,18 @@ package com.smdev.algorithm;
 
 import java.util.Arrays;
 
-public class BinaryHeapMax {
+public class BinaryHeapMin {
 
     private static final int INITIAL_CAPACITY = 10;
 
     private int[] items;
     private int size = 0;
 
-    public BinaryHeapMax() {
+    public BinaryHeapMin() {
         this(INITIAL_CAPACITY);
     }
 
-    public BinaryHeapMax(int capacity) {
+    public BinaryHeapMin(int capacity) {
         this.items = new int[capacity];
     }
 
@@ -32,7 +32,7 @@ public class BinaryHeapMax {
     private void heapifyUp(int itemIdx) {
         int parentIdx = getParentIdx(itemIdx);
         while (parentIdx >= 0) {
-            if (this.items[itemIdx] <= this.items[parentIdx]) {
+            if (this.items[itemIdx] >= this.items[parentIdx]) {
                 break;
             }
 
@@ -50,7 +50,7 @@ public class BinaryHeapMax {
         this.items = Arrays.copyOf(this.items, this.items.length * 2);
     }
 
-    public int getMax() {
+    public int getMin() {
         return getByIndex(0);
     }
 
@@ -61,12 +61,12 @@ public class BinaryHeapMax {
         return this.items[idx];
     }
 
-    public int extractMax() {
+    public int extractMin() {
         if (this.items == null) {
             throw new IllegalArgumentException();
         }
 
-        int max = this.items[0];
+        int min = this.items[0];
         if (this.size == 1) {
             this.items[0] = 0;
         } else {
@@ -80,18 +80,18 @@ public class BinaryHeapMax {
             //3. heapify down =  start from top
             heapifyDown(0);
         }
-        return max;
+        return min;
     }
 
     private void heapifyDown(int itemIdx) {
-        int largerChildIdx;
+        int smallerChildIdx;
         while (indexExists(getLeftChild(itemIdx))) {
-            largerChildIdx = getIdxOfTheLarger(getLeftChild(itemIdx), getRightChild(itemIdx));
-            if (this.items[itemIdx] > this.items[largerChildIdx]) {
+            smallerChildIdx = getIdxOfTheSmaller(getLeftChild(itemIdx), getRightChild(itemIdx));
+            if (this.items[itemIdx] < this.items[smallerChildIdx]) {
                 break;
             } else {
-                swap(itemIdx, largerChildIdx);
-                itemIdx = largerChildIdx;
+                swap(itemIdx, smallerChildIdx);
+                itemIdx = smallerChildIdx;
             }
         }
     }
@@ -118,9 +118,9 @@ public class BinaryHeapMax {
         return (2 * itemIdx) + 2;
     }
 
-    private int getIdxOfTheLarger(int leftIdx, int rightIdx) {
+    private int getIdxOfTheSmaller(int leftIdx, int rightIdx) {
         if (indexExists(rightIdx)) {
-            return this.items[leftIdx] > this.items[rightIdx] ? leftIdx : rightIdx;
+            return this.items[leftIdx] < this.items[rightIdx] ? leftIdx : rightIdx;
         }
         return leftIdx;
     }
