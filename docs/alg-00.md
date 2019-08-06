@@ -17,3 +17,5 @@ permalink: /sorting-algorithms
 
 ---
 
+
+[Sorting Algorithms Visualisations](https://www.toptal.com/developers/sorting-algorithms)

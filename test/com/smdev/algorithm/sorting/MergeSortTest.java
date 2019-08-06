@@ -5,14 +5,14 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class BubbleSortTest {
+public class MergeSortTest {
 
     @Test
     public void testSort() {
         int[] array = {5, 1, 4, 2, 8};
         System.out.println("Initial: " + Arrays.toString(array));
 
-        int[] sorted = BubbleSort.sort(array);
+        int[] sorted = MergeSort.mergeSort(array);
         System.out.println("Sorted:  " + Arrays.toString(sorted));
 
         Assert.assertEquals(1, sorted[0]);
@@ -27,7 +27,7 @@ public class BubbleSortTest {
         int arr[] = {4, 7, 14, 1, 3, 9, 17};
         System.out.println("Initial: " + Arrays.toString(arr));
 
-        int[] sorted = BubbleSort.sort(arr);
+        int[] sorted = MergeSort.mergeSort(arr);
         System.out.println("Sorted:  " + Arrays.toString(sorted));
 
         Assert.assertEquals(1, sorted[0]);

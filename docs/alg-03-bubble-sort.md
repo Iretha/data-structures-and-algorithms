@@ -10,7 +10,7 @@ permalink: /bubble-sort
 {: .fs-9 }
 
 Relatively fast sorting algorithm, that does in-place sorting (sorts the array itself) and does
-not generate additional instances. The runtime characteristics is: 
+not generate additional instances. The time complexity is O(N^2), relatively slow! 
 {: .fs-6 .fw-300 }
 ---
 
@@ -25,13 +25,15 @@ on until we hit the first position, where should be the MIN element.
 
 # Pros
 - In-place sorting, does not generate new objects (no additional memory usage)
+- The fastest on an extremely small and/or nearly sorted set of data
 
 # Cons
 - No really fast
 - Not appropriate for large data sets
 
 # Usage
-- Not used in practise, because of it's runtime
+- Not used in practise, because of it's runtime except the cases of very small amount of data, 
+that is almost sorted
 
 # Implementation
 ```java
