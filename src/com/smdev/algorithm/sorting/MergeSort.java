@@ -28,6 +28,7 @@ public class MergeSort {
             } else if (arr2[pointer2] < arr1[pointer1]) {
                 merged[idx++] = arr2[pointer2++];
             } else {
+                // copy only 1 value here if you want to remove the duplicates
                 merged[idx++] = arr1[pointer1++];
                 merged[idx++] = arr2[pointer2++];
             }

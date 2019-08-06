@@ -15,6 +15,7 @@ You split the array in halves until you reach the smallest possible sub-arrays, 
 
 # Description
 It's "Divide & Conquer" type of algorithm.
+
 You split the array in halves until you reach the smallest possible sub-arrays, then merge them back.
 
 Steps:
@@ -30,15 +31,18 @@ Relatively fast - O(nlog(n))
 
 # Pros
 * Pretty efficient sorting algorithm - O(n log(n))
+* Can be used for external sorting (when memory is not enough, you may use external memory (like HDD or smth else))
+* Highly parallelizeable
+* Can be used to implement a stable sort
 
 # Cons
-* Takes up a bit more space (as you are copying and duplicating arrays and it's content)
+* Requires extra space (as you are copying and duplicating arrays and it's content)
 
 # Usage
 * You can combine arrays and sort the elements or to remove duplicates
 * For sorting Linked Lists
-* Inversion Count Problem (to calculate how inversions should be made to sort an array)
-* External sorting - External sorting is a class of sorting algorithms that can handle massive amounts of data. 
+* Inversion Count Problem (to calculate how many inversions should be made to sort an array)
+* **External sorting** - External sorting is a class of sorting algorithms that can handle massive amounts of data. 
 External sorting is required when the data being sorted do not fit into the main memory of a computing device (usually RAM) 
 and instead they must reside in the slower external memory, usually a hard disk drive. 
 
@@ -72,6 +76,7 @@ public class MergeSort {
             } else if (arr2[pointer2] < arr1[pointer1]) {
                 merged[idx++] = arr2[pointer2++];
             } else {
+                // copy only 1 value here if you want to remove the duplicates
                 merged[idx++] = arr1[pointer1++];
                 merged[idx++] = arr2[pointer2++];
             }

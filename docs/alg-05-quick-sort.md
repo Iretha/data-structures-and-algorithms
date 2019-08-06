@@ -1,0 +1,166 @@
+---
+layout: default
+title: Quick Sort
+parent: Algorithms (Sorting)
+nav_order: 250
+description: "Quick Sort"
+permalink: /quick-sort
+---
+# Quick Sort
+{: .fs-9 }
+
+Quicksort is a sorting algorithm and also known as a Partion-Exchange Sort in which
+partition is carried out dynamically. Quicksort is a comparision sort and is popular because works well 
+for a variety of different kinds of input data, and is substantially faster than any other sorting method in typical applications.
+{: .fs-6 .fw-300 }
+---
+
+# Description
+
+The three steps of quicksort are
+Divide : Rearrange the elements and partition the array into two partitions such that each element
+on the left partition is less than or equal to the middle element and each element in the right
+partition is greater than the middle element.
+Conquer : Recursively sort the two partitions.
+Combine : None.
+
+## Steps:
+
+1). Pick a pivot for the round and move it to the mid position
+
+The best way to choose a pivot is to select the median number between the first/ mid and last element.
+This is useful when the array is already sorted or nearly sorted.
+```
+[4,2,6,5,3,9] -> [4, 5, 9] -> the medium is 5
+[4,2,10,9,3,2] -> [4, 9, 2] -> the medium is 4
+```
+2). Partition the array around the pivot and return the index of the partition
+
+We will "partition" the array in two partitions and move all the numbers, that are less than the pivot
+to the left partition and all the numbers, that are larger than the pivot to the right partition.
+
+This is done as follows:
+2.1). Init the left pointer, that should start from the first element and should move to right (left)
+2.2). Init the right pointer, that should start from the last element and should move to left (right)
+2.3). While the left pointer is less or equal than the right pointer (left <= right), because they didn't met yet, do:
+2.3.1). While the element at arr[left] is less than the pivot, move left pointer to the right (left++)
+2.3.2). While the element at arr[right] is larger than the pivot, move right pointer to the left (right--)
+2.3.3). If left <= right, then swap their positions
+2.3.4). Return the index, where they met. When we are at this point, the left pointer is equal to the right pointer.
+You can return any of them.
+
+3). Repeat step 1 and 2 for the left partition
+```
+quickSort(arr, left, index - 1);
+```
+4). Repeat step 1 and 2 for the right partition
+```
+quickSort(arr, index, right);
+```
+
+## Strategies to choose a pivot:
+* First element - poor performance for sorted or nearly sorted
+* Last element - poor performance for sorted or nearly sorted
+* Medium element - best way
+* Random element - unpredictable
+
+# Runtime Characteristics
+Relatively fast - O(nlog(n))
+
+# Pros
+* Very efficient for large data sets - O(nlogn)
+* Best choice if speed is the primary focus
+* Also well used for massively repetitive sorting
+* Doesn't take additional memory because the elements are swapped inside the same array (in-place sorting) and
+no new arrays are created or no elements are copied
+
+# Cons
+* Not good for small or semi-ordered lists
+* Not a stable sort (the relative order of equal sort items is not preserved)
+* Poor performance for sorted or almost sorted data sets
+
+# Usage
+* Uniqueness Testing
+* Deleting Duplicates
+* Frequency Counting
+* Efficient Searching
+
+# Implementation
+```java
+public class QuickSort {
+
+    public static int[] sort(int[] arr) {
+        if (arr == null || arr.length == 0 || arr.length == 1) {
+            return arr;
+        }
+        quickSort(arr, 0, arr.length - 1);
+        return arr;
+    }
+
+    private static void quickSort(int[] arr, int left, int right) {
+        if (left >= right) { // we reached the end
+            return;
+        }
+
+        // Step 1: Pick a pivot
+        int pivot = pickPivot(arr, left, right);
+
+        // Step 2: Partition the array around this pivot - return the index of the partition
+        int index = partition(arr, left, right, pivot);
+
+        // Step 3: Repeat for the left partition
+        quickSort(arr, left, index - 1);
+
+        // Step 4: Repeat for the right partition
+        quickSort(arr, index, right);
+    }
+
+    private static int partition(int[] arr, int left, int right, int pivot) {
+        while (left <= right) {
+            // Move right until you find an element bigger than the pivot
+            while (arr[left] < pivot) {
+                left++;
+            }
+
+            // Move left until you find an element less than the pivot
+            while (arr[right] > pivot) {
+                right--;
+            }
+
+            // Then swap
+            if (left <= right) {
+                swap(arr, left, right);
+                left++;
+                right--;
+            }
+        }
+        return left;
+    }
+
+    /**
+     * For best performance compare first, mid and last and pick the medium number as a pivot
+     */
+    private static int pickPivot(int[] arr, int left, int right) {
+        int mid = (left + right) / 2;
+
+        if (arr[left] > arr[right]) {
+            swap(arr, left, right);
+        }
+
+        if (arr[left] > arr[mid]) {
+            swap(arr, mid, left);
+        }
+
+        if (arr[right] < arr[mid]) {
+            swap(arr, mid, right);
+        }
+        return arr[mid];
+    }
+
+    private static void swap(int[] arr, int pos1, int pos2) {
+        int tmp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = tmp;
+    }
+}
+```
