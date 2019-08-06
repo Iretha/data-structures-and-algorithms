@@ -2,7 +2,7 @@
 layout: default
 title: Fibonacci Series
 parent: Algorithms
-nav_order: 400
+nav_order: 101
 description: "Fibonacci Series & Memoization"
 permalink: /fibonacci
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Binary Heap/ HeapSort
-parent: Algorithms
+parent: Sorting Algorithms
 nav_order: 220
 description: "Binary Heap"
 permalink: /binary-heap
