@@ -1,5 +1,6 @@
-package com.smdev.algorithm;
+package com.smdev.algorithm.sorting;
 
+import com.smdev.algorithm.sorting.BinarySearchTree;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

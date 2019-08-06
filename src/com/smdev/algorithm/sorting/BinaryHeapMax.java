@@ -1,4 +1,4 @@
-package com.smdev.algorithm;
+package com.smdev.algorithm.sorting;
 
 import java.util.Arrays;
 
