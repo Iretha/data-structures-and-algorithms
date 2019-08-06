@@ -85,3 +85,10 @@ An example of a complete binary tree is the binary heap.
 This means that we start from root (lvl 0), then we continue with the children of the root node (level 1), then with 
 level 3 etc.
 * Depth First - we start from root(level 0) and then we go deep to the highest level (level N)
+
+## Algorithms, that use Binary Trees
+
+Name|Summary|Usage
+---|---|---
+[Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorted Binary Tree with super fast search/insert/delete of O(log N).|in many search applications, where data is changing
+[Binary Heap MAX/MIN](https://iretha.github.io/data-structures-and-algorithms/binary-heap)| To find/ extract MAX/MIN value super fast with complexity of O(1) | Priority Queues, Scheduling, Routing, Shortest Path Alg.
