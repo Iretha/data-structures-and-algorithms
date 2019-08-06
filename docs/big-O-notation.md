@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Big O Notation
-nav_order: 20
+nav_order: 5
 description: "Big O Notation"
 has_children: true
 permalink: /big-o-notation

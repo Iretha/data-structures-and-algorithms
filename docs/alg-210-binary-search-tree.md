@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Binary Search Tree (BST)
-parent: Sorting Algorithms
+parent: Algorithms (Sorting)
 nav_order: 210
 description: "Binary Search Tree"
 permalink: /binary-search-tree
