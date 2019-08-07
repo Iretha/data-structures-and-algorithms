@@ -15,6 +15,7 @@ Series of numbers where every number, after the first two, is the sum of the pre
 
 ## Summary
 Series of numbers where every number, after the first two, is the sum of the previous two numbers.
+
 1, 1, 2, 3, 5, 8, 13, 21...
 
 * F(n) = F(n-1) + F(n-2), where F(0) = 0 and F(1) = 1
