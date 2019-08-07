@@ -9,11 +9,14 @@ permalink: /quick-sort
 # Quick Sort
 {: .fs-9 }
 
-Quicksort is a sorting algorithm and also known as a Partion-Exchange Sort in which
-partition is carried out dynamically. Quicksort is a comparision sort and is popular because works well 
-for a variety of different kinds of input data, and is substantially faster than any other sorting method in typical applications.
+Divide and Conquer type of algorithms, that does in-place sorting. We chose a pivot and split the array into two logical partitions around the pivot.
+All elements less than the pivot are moved to the left partition and all elements larger then pivot are moved to the right partition.
+This is done recursively for each partition. The Time Complexity is O(N log(N), which is relatively fast.
 {: .fs-6 .fw-300 }
 ---
+
+It is also known as a Partion-Exchange Sort. Quicksort is a comparision sort and is popular because works well 
+for a variety of different kinds of input data, and is substantially faster than any other sorting method in typical applications.
 
 ## Description
 The three "main" steps of quicksort are:

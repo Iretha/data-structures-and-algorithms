@@ -9,8 +9,8 @@ permalink: /bubble-sort
 # Bubble Sort
 {: .fs-9 }
 
-Relatively fast sorting algorithm, that does in-place sorting (sorts the array itself) and does
-not generate additional instances. The time complexity is O(N^2), relatively slow! 
+Relatively slow sorting algorithm, that does in-place sorting (sorts the array itself) and does
+not generate additional instances. The avg. time complexity is O(N^2), which is slow! 
 {: .fs-6 .fw-300 }
 ---
 
@@ -31,7 +31,7 @@ on until we hit the first position, where should be the MIN element.
 - No really fast
 - Not appropriate for large data sets
 
-# Usage
+## Usage
 - Not used in practise, because of it's runtime except the cases of very small amount of data, 
 that is almost sorted
 

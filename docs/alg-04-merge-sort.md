@@ -9,13 +9,12 @@ permalink: /merge-sort
 # Merge Sort
 {: .fs-9 }
 
-You split the array in halves until you reach the smallest possible sub-arrays, then merge them back, while sorting.
+Divide and Conquer type of algorithms. We split the array into two sub-arrays until you reach the smallest possible sub-arrays (from 1 element), then merge them back, while sorting.
+The Time Complexity is O(N log(N), which is relatively fast.
 {: .fs-6 .fw-300 }
 ---
 
 ## Description
-It's "Divide & Conquer" type of algorithm.
-
 You split the array in halves until you reach the smallest possible sub-arrays, then merge them back.
 
 ### Steps:
@@ -24,7 +23,7 @@ If r > l
 1. Find the middle of the array: m = (l+r)/2
 2. Invoke mergeSort(arr, l, m) for the first half
 3. Invoke mergeSort(arr, l, m) for the second half
-4. Merge them
+4. Merge them back, while sorting
 
 ## Runtime Characteristics
 Relatively fast - O(nlog(n))
