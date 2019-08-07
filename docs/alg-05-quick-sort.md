@@ -79,7 +79,7 @@ quickSort(arr, left, index - 1);
 quickSort(arr, index, right);
 ```
 
-### Strategies to choose a pivot:
+### Different strategies to choose a pivot:
 * First element - poor performance for sorted or nearly sorted
 * Last element - poor performance for sorted or nearly sorted
 * Median number - best way

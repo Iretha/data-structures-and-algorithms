@@ -14,20 +14,20 @@ not generate additional instances. The time complexity is O(N^2), relatively slo
 {: .fs-6 .fw-300 }
 ---
 
-# Description
+## Description
 Start from the beginning (index=0), compare the element with the next, if it's larger than next => swap positions, 
 if it's not, then proceed with the next element. At the end of the first iteration, the largest element will be placed at the last position.
 At the end of the second iteration, the second largest element will be placed (on the last position -1) and so
 on until we hit the first position, where should be the MIN element.
 
-# Runtime Characteristics
+## Runtime Characteristics
 2 embedded loops => time complexity is O(N^2)
 
-# Pros
+## Pros
 - In-place sorting, does not generate new objects (no additional memory usage)
 - The fastest on an extremely small and/or nearly sorted set of data
 
-# Cons
+## Cons
 - No really fast
 - Not appropriate for large data sets
 
@@ -35,7 +35,7 @@ on until we hit the first position, where should be the MIN element.
 - Not used in practise, because of it's runtime except the cases of very small amount of data, 
 that is almost sorted
 
-# Implementation
+## Implementation
 ```java
     public static int[] sort(int[] arr) {
         if (arr == null || arr.length == 0 || arr.length == 1) {
@@ -55,4 +55,19 @@ that is almost sorted
         }
         return arr;
     }
+```
+## Example
+```java
+Initial: [9, 1, 6, 2, 5, 3, 7]
+[1, 9, 6, 2, 5, 3, 7]
+[1, 6, 9, 2, 5, 3, 7]
+[1, 6, 2, 9, 5, 3, 7]
+[1, 6, 2, 5, 9, 3, 7]
+[1, 6, 2, 5, 3, 9, 7]
+[1, 6, 2, 5, 3, 7, 9]
+[1, 2, 6, 5, 3, 7, 9]
+[1, 2, 5, 6, 3, 7, 9]
+[1, 2, 5, 3, 6, 7, 9]
+[1, 2, 3, 5, 6, 7, 9]
+Sorted:  [1, 2, 3, 5, 6, 7, 9]
 ```

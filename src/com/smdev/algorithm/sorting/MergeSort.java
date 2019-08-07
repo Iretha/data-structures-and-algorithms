@@ -41,6 +41,8 @@ public class MergeSort {
         while (pointer2 < len2 && pointer1 >= len1) {// arr2 still has elements
             merged[idx++] = arr2[pointer2++];
         }
+
+        System.out.println("Merged: " + Arrays.toString(merged));
         return merged;
     }
 }

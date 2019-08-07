@@ -13,12 +13,12 @@ You split the array in halves until you reach the smallest possible sub-arrays, 
 {: .fs-6 .fw-300 }
 ---
 
-# Description
+## Description
 It's "Divide & Conquer" type of algorithm.
 
 You split the array in halves until you reach the smallest possible sub-arrays, then merge them back.
 
-Steps:
+### Steps:
 MergeSort(arr[], l,  r)
 If r > l
 1. Find the middle of the array: m = (l+r)/2
@@ -26,19 +26,19 @@ If r > l
 3. Invoke mergeSort(arr, l, m) for the second half
 4. Merge them
 
-# Runtime Characteristics
+## Runtime Characteristics
 Relatively fast - O(nlog(n))
 
-# Pros
+## Pros
 * Pretty efficient sorting algorithm - O(n log(n))
 * Can be used for external sorting (when memory is not enough, you may use external memory (like HDD or smth else))
 * Highly parallelizeable
 * Can be used to implement a stable sort
 
-# Cons
+## Cons
 * Requires extra space (as you are copying and duplicating arrays and it's content)
 
-# Usage
+## Usage
 * You can combine arrays and sort the elements or to remove duplicates
 * For sorting Linked Lists
 * Inversion Count Problem (to calculate how many inversions should be made to sort an array)
@@ -46,7 +46,7 @@ Relatively fast - O(nlog(n))
 External sorting is required when the data being sorted do not fit into the main memory of a computing device (usually RAM) 
 and instead they must reside in the slower external memory, usually a hard disk drive. 
 
-# Implementation
+## Implementation
 ```java
 import java.util.Arrays;
 
@@ -92,4 +92,15 @@ public class MergeSort {
         return merged;
     }
 } 
+```
+## Example
+```
+Initial: [9, 1, 6, 2, 5, 3, 7]
+Merged: [1, 6]
+Merged: [1, 6, 9]
+Merged: [2, 5]
+Merged: [3, 7]
+Merged: [2, 3, 5, 7]
+Merged: [1, 2, 3, 5, 6, 7, 9]
+Sorted:  [1, 2, 3, 5, 6, 7, 9]
 ```

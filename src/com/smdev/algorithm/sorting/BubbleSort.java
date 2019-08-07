@@ -1,5 +1,7 @@
 package com.smdev.algorithm.sorting;
 
+import java.util.Arrays;
+
 public class BubbleSort {
 
     public static int[] sort(int[] arr) {
@@ -15,6 +17,8 @@ public class BubbleSort {
                     tmp = arr[y];
                     arr[y] = arr[y + 1];
                     arr[y + 1] = tmp;
+
+                    System.out.println(Arrays.toString(arr));
                 }
             }
         }
