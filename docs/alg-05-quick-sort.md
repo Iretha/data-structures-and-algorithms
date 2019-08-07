@@ -47,18 +47,26 @@ We will "partition" the array in two partitions and move all numbers, that are l
 to the left partition and all the numbers, that are larger than the pivot to the right partition.
 
 This is done as follows:
+
 2.1). Init the left pointer, that should start from the first element of the array and should move to right (left++)
+
 2.2). Init the right pointer, that should start from the last element of the array and should move to left (right--)
+
 2.3). While the left pointer is less or equal than the right pointer (left <= right), because they didn't met yet, do:
+
 2.3.1). While the element at arr[left] is less than the pivot, it means it's on the right place and we want to leave it there, 
 that's why we continue moving left pointer to the right (left++). If you find a number, that is bigger than the pivot, 
 then stop the pointer and wait (we need to find a number from the right side as well, so that we can swap both numbers).
+
 2.3.2). While the element at arr[right] is larger than the pivot, it means it's on the right place and we want to leave it there, 
 that's why we continue moving right pointer to the left (right--). If you find a number, that is less than the pivot, 
 then stop the pointer.
+
 2.3.3). If left is still less or if it's equal to right (left < right), then swap the values, located on "left" and "right"
 and then increase both pointers (left++ / right--)
+
 2.3.4). Continue until both pointers hit the same index (left == right)
+
 2.3.5). Return the index, where they met. When we are at this point, the left pointer is equal to the right pointer and you can return any of them.
 At this point we "know" that all numbers in the right partition are larger then the numbers in the left partition and vice versa.
 
