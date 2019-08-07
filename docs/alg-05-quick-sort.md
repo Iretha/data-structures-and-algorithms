@@ -35,10 +35,10 @@ This is done as follows:
 - Compare first and mid, swap if first is larger than last.
 - Compare last and mid, swap if mid is larger than last.
 
-And now, mid is the pivot number.
+And now, mid is the pivot number as it is the median number as well.
 ```
-[4,2,6,5,3,9] -> [4, 5, 9] -> the medium is 5
-[4,2,10,9,3,2] -> [4, 9, 2] -> [2, 9, 4] -> [2, 4, 9] -> the medium is 4
+[4,2,6,5,3,9] -> [4, 5, 9] -> the median is 5
+[4,2,10,9,3,2] -> [4, 9, 2] -> [2, 9, 4] -> [2, 4, 9] -> the median is 4
 ```
 
 2). Partition the array around the pivot and return the index of the partition
@@ -74,7 +74,7 @@ quickSort(arr, index, right);
 ### Strategies to choose a pivot:
 * First element - poor performance for sorted or nearly sorted
 * Last element - poor performance for sorted or nearly sorted
-* Medium element - best way
+* Median number - best way
 * Random element - unpredictable
 
 ## Runtime Characteristics
@@ -151,7 +151,7 @@ public class QuickSortPivotMedian {
     }
 
     /**
-     * For best performance compare first, mid and last and pick the medium number as a pivot
+     * For best performance compare first, mid and last and pick the median number as a pivot
      */
     private static int pickPivot(int[] arr, int left, int right) {
         int mid = (left + right) / 2;
