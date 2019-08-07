@@ -9,8 +9,8 @@ permalink: /dfs-graph
 
 # Depth First Search (DFS)
 {: .fs-9 }
-We start from a node and then we expand down until we hit the a node, that has no more nodes to expand.
 
+We start from a node and then we expand down until we hit the a node, that has no more nodes to expand.
 {: .fs-6 .fw-300 }
 ---
 
@@ -25,8 +25,11 @@ We start from a node and then we expand down until we hit the a node, that has n
 The implementation is almost the same with the difference that we use Stack (LIFO) to "queue" the nodes.
 
 1). Add (Push) the node you to plan to visit to the stack
+
 2). Pop it out, mark it as visited and it's neighbours to the stack
+
 3). Repeat until there are elements in the stack
+
 5). When you are adding new neighbours to the stack, check if they are not already visited/ added to the path. 
 If they are not visited, then add them to the stack. If they are visited (or in the path), then don't add them again.
 

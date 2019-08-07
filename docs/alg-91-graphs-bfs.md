@@ -26,9 +26,13 @@ and so on, until there are no more neighbours of neighbours.
 We use Queue (FIFO) to track the nodes we have to visit and when a node is visited, we poll it from the queue.
 
 1). Add the nodes you to plan to visit to the queue
+
 2). Poll the node, to mark it as visited, add it to the Path and add its' neighbours to the queue 
+
 3). Poll the first neighbour (to mark it as visited, add it to the Path) and add its neighbours to the queue
+
 4). Poll the next one (to mark it as visited, add it to the Path) and add its neighbours to the queue and so on...
+
 5). When you are adding new neighbours to the queue, check if they are not already visited (added to the path). 
 If they are not visited, then add them to the queue. If they are visited (in the path), then don't add them again to the queue.
 
