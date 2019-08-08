@@ -6,10 +6,6 @@ public class T02_PermutationDetector {
 
     public static final String EMPTY = "";
 
-    public static boolean isPermutation(String s1, String s2) {
-        return isPermutation1(s1, s2);
-    }
-
     /**
      * O(N)
      *
@@ -17,7 +13,7 @@ public class T02_PermutationDetector {
      * @param s2
      * @return
      */
-    public static boolean isPermutation1(String s1, String s2) {
+    public static boolean isPermutation(String s1, String s2) {
         if (s1 == null || s2 == null || s1.length() != s2.length()) {
             return false;
         }
@@ -48,7 +44,7 @@ public class T02_PermutationDetector {
      * @param s2
      * @return
      */
-    public static boolean isPermutation2(String s1, String s2) {
+    public static boolean isPermutation1(String s1, String s2) {
         if (s1 == null || s2 == null || s1.length() != s2.length()) {
             return false;
         }
@@ -69,7 +65,7 @@ public class T02_PermutationDetector {
      * @param s2
      * @return
      */
-    public static boolean isPermutation3(String s1, String s2) {
+    public static boolean isPermutation2(String s1, String s2) {
         if (s1 == null || s2 == null || s1.length() != s2.length()) {
             return false;
         }

@@ -1,16 +1,42 @@
 package com.smdev.algorithm.general.strings;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class T01_UniqueCharactersDetector {
 
+
+    /**
+     * Uses Map
+     * <p>
+     * Worst Case: O(N) - if all are unique
+     *
+     * @param s
+     * @return
+     */
     public static boolean areCharsUnique(String s) {
-        return areCharsUnique1(s);
+        if (s == null) {
+            return false;
+        }
+        if (s.length() == 0) {
+            return true;
+        }
+
+        char ch;
+        int cnt;
+        Map<Character, Integer> freq = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            ch = s.charAt(i);
+            cnt = freq.getOrDefault(ch, 0) + 1;
+            if (cnt > 1) {
+                return false;
+            }
+            freq.put(ch, cnt);
+        }
+        return true;
     }
 
     /**
+     * Via Set 1
      * O(N)
      */
     public static boolean areCharsUnique1(String s) {
@@ -24,19 +50,5 @@ public class T01_UniqueCharactersDetector {
             }
         }
         return true;
-    }
-
-    /**
-     * O(N)
-     *
-     * @param s
-     * @return
-     */
-    public static boolean areCharsUnique2(String s) {
-        if (s == null) {
-            return false;
-        }
-        Set<Character> chs = new HashSet(Arrays.asList(s.length()));
-        return s.length() == chs.size();
     }
 }
