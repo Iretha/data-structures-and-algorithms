@@ -1,9 +1,6 @@
 package com.smdev.algorithm.general;
 
-import com.smdev.algorithm.general.strings.T01_UniqueCharactersDetector;
-import com.smdev.algorithm.general.strings.T02_PermutationDetector;
-import com.smdev.algorithm.general.strings.T03_URLConvertor;
-import com.smdev.algorithm.general.strings.T04_OneAway;
+import com.smdev.algorithm.general.strings.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -70,7 +67,7 @@ public class StringTests {
     }
 
     @Test
-    public void testOneAway() {
+    public void test_T04_OneAway() {
         // Challenge: There are three types of edits that can be performed on strings: insert a character,
         // remove a character, or replace a character. Given two strings, write a function to check if they are
         // one or zero edits away.
@@ -121,7 +118,27 @@ public class StringTests {
         Assert.assertTrue(T04_OneAway.oneAway("pale", "pble"));
         Assert.assertTrue(T04_OneAway.oneAway("pale", "palk"));
         Assert.assertFalse(T04_OneAway.oneAway("pale", "bakeerer"));
+    }
 
+    @Test
+    public void test_T05_Compressor() {
+        // Challenge: Give a string with repeating characters (i.e. "aaabb") write
+        // an algorithm that will compress the string down to the character, followed
+        // by the number of times it appears in the string (i.e "a3b2").
+        // If the compressed string is not smaller than original, return original.
+
+        Assert.assertNull(T05_Compressor.compress(null));
+        Assert.assertEquals("", T05_Compressor.compress(""));
+        Assert.assertEquals("a", T05_Compressor.compress("a"));
+        Assert.assertEquals("aa", T05_Compressor.compress("aa"));
+        Assert.assertEquals("a3", T05_Compressor.compress("aaa"));
+
+        Assert.assertEquals("a3b2", T05_Compressor.compress("aaabb"));
+        Assert.assertEquals("aabb", T05_Compressor.compress("aabb"));
+        Assert.assertEquals("ab", T05_Compressor.compress("ab"));
+        Assert.assertEquals("abc", T05_Compressor.compress("abc"));
+        Assert.assertEquals("z3", T05_Compressor.compress("zzz"));
+        Assert.assertEquals("aabbaabb", T05_Compressor.compress("aabbaabb")); // not shorter
     }
 
 }

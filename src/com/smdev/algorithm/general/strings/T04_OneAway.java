@@ -25,11 +25,19 @@ public class T04_OneAway {
                 if (str2.charAt(i + edits) != str1.charAt(i)) { // because it's an insert
                     edits++;
                 }
+
+                if (edits > 1) {
+                    break;
+                }
             }
         } else if (len2 == len1) { // char replaced
             for (int i = 0; i < len1; i++) {
                 if (str2.charAt(i) != str1.charAt(i)) { // because it's a replace
                     edits++;
+                }
+
+                if (edits > 1) {
+                    break;
                 }
             }
         } else if (len2 == len1 - 1) { // char deleted
@@ -37,8 +45,13 @@ public class T04_OneAway {
                 if (i == len2) {
                     break; // we reached the end
                 }
+
                 if (str1.charAt(i) != str2.charAt(i - edits)) { // because it's a delete
                     edits++;
+                }
+
+                if (edits > 1) {
+                    break;
                 }
             }
         }
