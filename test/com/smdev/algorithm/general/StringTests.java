@@ -2,6 +2,8 @@ package com.smdev.algorithm.general;
 
 import com.smdev.algorithm.general.strings.T01_UniqueCharactersDetector;
 import com.smdev.algorithm.general.strings.T02_PermutationDetector;
+import com.smdev.algorithm.general.strings.T03_URLConvertor;
+import com.smdev.algorithm.general.strings.T04_OneAway;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -44,4 +46,82 @@ public class StringTests {
         Assert.assertFalse(func.apply("abcd", "Acdb"));
         Assert.assertFalse(func.apply("abcd", "aadb"));
     }
+
+    @Test
+    public void test_T03_Urlify() {
+        test_T03_Urlify(T03_URLConvertor::urlify);
+    }
+
+    private void test_T03_Urlify(BiFunction<String, Integer, String> func) {
+        Assert.assertNull(func.apply(null, 0));
+        Assert.assertEquals("", func.apply("", 0));
+        Assert.assertEquals("a%20b%20%20c%20d", func.apply(" a b  c d     ", 16));
+        Assert.assertEquals("a%20b%20%20c%20d", func.apply(" a b  c d  \n   ", 16));
+        Assert.assertEquals("abcd", func.apply("abcd", 4));
+        Assert.assertEquals("a%20bcd", func.apply(" a bcd     ", 7));
+        Assert.assertEquals("a%20bc%20d", func.apply("a bc d ", 10));
+        Assert.assertEquals("a%20bc", func.apply("a bc d ", 6));
+        Assert.assertEquals("a", func.apply("a bc d ", 1));
+        Assert.assertEquals("a", func.apply("a bc d ", 2));
+        Assert.assertEquals("a", func.apply("a bc d ", 3));
+        Assert.assertEquals("a", func.apply("a bc d ", 4));
+        Assert.assertEquals("a%20b", func.apply("a bc d ", 5));
+        Assert.assertEquals("abcd", func.apply("abcd", 10));
+    }
+
+    @Test
+    public void testOneAway() {
+        // Challenge: There are three types of edits that can be performed on strings: insert a character,
+        // remove a character, or replace a character. Given two strings, write a function to check if they are
+        // one or zero edits away.
+
+        // null checks
+        Assert.assertFalse(T04_OneAway.oneAway(null, null));
+        Assert.assertFalse(T04_OneAway.oneAway("pale", null));
+        Assert.assertFalse(T04_OneAway.oneAway(null, "pale"));
+
+        // empty checks
+        Assert.assertTrue(T04_OneAway.oneAway("", ""));
+        Assert.assertTrue(T04_OneAway.oneAway("", "a"));
+        Assert.assertTrue(T04_OneAway.oneAway("b", ""));
+        Assert.assertTrue(T04_OneAway.oneAway("c", "d"));
+
+        // inserts
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "Dabc"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "abcD"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "abDc"));
+
+        // deletes
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "bc"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "ab"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "ac"));
+        Assert.assertFalse(T04_OneAway.oneAway("abc", "a"));
+
+        // replaces
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "Abc"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "aBc"));
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "abC"));
+
+        // equal
+        Assert.assertTrue(T04_OneAway.oneAway("abc", "abc"));
+
+        // other
+        Assert.assertFalse(T04_OneAway.oneAway("abc", "abCCCC"));
+        Assert.assertFalse(T04_OneAway.oneAway("abc", "klp"));
+        Assert.assertFalse(T04_OneAway.oneAway("abc", "kl"));
+        Assert.assertFalse(T04_OneAway.oneAway("abc", "kmlop"));
+
+        // random
+        Assert.assertFalse(T04_OneAway.oneAway("pale", "paleXXXX"));
+        Assert.assertTrue(T04_OneAway.oneAway("pale", "ple"));
+        Assert.assertTrue(T04_OneAway.oneAway("pales", "pale"));
+        Assert.assertTrue(T04_OneAway.oneAway("pale", "bale"));
+        Assert.assertFalse(T04_OneAway.oneAway("pale", "bake"));
+        Assert.assertTrue(T04_OneAway.oneAway("pale", "aale"));
+        Assert.assertTrue(T04_OneAway.oneAway("pale", "pble"));
+        Assert.assertTrue(T04_OneAway.oneAway("pale", "palk"));
+        Assert.assertFalse(T04_OneAway.oneAway("pale", "bakeerer"));
+
+    }
+
 }
