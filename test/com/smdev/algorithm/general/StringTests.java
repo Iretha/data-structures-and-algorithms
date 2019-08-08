@@ -1,6 +1,6 @@
 package com.smdev.algorithm.general;
 
-import com.smdev.algorithm.general.strings.*;
+import com.smdev.algorithm.general.challenges.*;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.smdev.algorithm.general.strings;
+package com.smdev.algorithm.general.challenges;
 
 import java.util.Arrays;
 
