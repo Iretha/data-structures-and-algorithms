@@ -13,22 +13,22 @@ Mostly loop detection algorithms.
 {: .fs-6 .fw-300 }
 ---
 
-## Loop Detection Algorithms
+## 1). Loop Detection Algorithms
 Here are 3 different approaches you can use:
 
-### Hashing - O(N)
+###  1.1). Hashing - O(N)
 You can iterate over the nodes and add them in a HashSet. If the node is already added,
 then there is a cycle.
 
 This is kind of a brute force approach.
 
-### Mark Visited Nodes - O(N)
+###  1.2). Mark Visited Nodes - O(N)
 You need to extend the Node class and add a flag (boolean), which shows if the node is visited.
 Then you need to iterate through the nodes and if the node is already visited, then there is a cycle.
 
 This is kind of a brute force approach.
 
-### [Floyd’s Cycle-Finding Algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare) - O(N)
+###  1.3). [Floyd’s Cycle-Finding Algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare) - O(N)
 The algorithm is also known as **Floyd's Tortoise and Hare**.
 
 You need 2 pointers (slow and fast), both starting from the same node.
@@ -53,7 +53,7 @@ Moving| 4 (+ 1)| 2 (+ 2)
 Moving| 5 (+ 1)| 4 (+ 2)
 Cycle Found| 1 (+ 1)| 1 (+ 2)
 
-#### Implementation:
+* Implementation:
 ```
     public boolean detectLoop() {
         // both start from the same place
@@ -73,7 +73,7 @@ Cycle Found| 1 (+ 1)| 1 (+ 2)
     }
 ```
 
-#### Example:
+* Example:
 ```java
 1 5 4 3 2 1
 
@@ -84,10 +84,10 @@ Moving:     S: 3 | F: 5
 Moving:     S: 2 | F: 3
 Cycle:      S: 1 | F: 1
 ```
-## Find length of a loop in linked list
+## 2). Find length of a loop in linked list
 The best approach is to use Floyd’s Cycle-Finding Algorithm and when you find the node, 
 to iterate through the nodes, until you reach the same node and count the iterations.
 
-## Detect if is a Circular Linked List
+## 3). Detect if is a Circular Linked List
 Well, this is a tricky task, because you should not only detect if there is a loop, 
 but you also should keep in mind, that the length of the loop should be equal to the list size.
