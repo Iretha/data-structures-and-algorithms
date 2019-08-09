@@ -20,13 +20,13 @@ Here are 3 different approaches you can use:
 You can iterate over the nodes and add them in a HashSet. If the node is already added,
 then there is a cycle.
 
-This is kind of a brute force approach.
+**This is kind of a brute force approach.**
 
 ###  1.2). Mark Visited Nodes - O(N)
 You need to extend the Node class and add a flag (boolean), which shows if the node is visited.
 Then you need to iterate through the nodes and if the node is already visited, then there is a cycle.
 
-This is kind of a brute force approach.
+**This is kind of a brute force approach.**
 
 ###  1.3). [Floyd’s Cycle-Finding Algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare) - O(N)
 The algorithm is also known as **Floyd's Tortoise and Hare**.
@@ -37,7 +37,7 @@ The fast pointer moves with a step = 2 (Hare).
 If the pointers meet, then there is a cycle. 
 If they don't meet and some of them reaches the end instead (null), then there is no cycle.
 
-This is the preferred approach.
+**This is the preferred approach.**
 
 Example Sequence:
 ```
