@@ -11,7 +11,6 @@ public class T09_SubTreeChecker {
         return preOrder1.contains(preOrder2);
     }
 
-
     public static boolean isSubTreePostOrder(SimpleBinarySearchTree t1, SimpleBinarySearchTree t2) {
         String order1 = t1.getPostOrder();
         String order2 = t2.getPostOrder();

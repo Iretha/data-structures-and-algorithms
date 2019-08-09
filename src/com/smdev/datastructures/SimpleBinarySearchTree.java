@@ -40,6 +40,8 @@ public class SimpleBinarySearchTree {
     public String getPreOrder() {
         StringBuilder order = new StringBuilder();
         preOrderIterate(this.root, order);
+
+        System.out.println(order.toString());
         return order.toString();
     }
 
@@ -55,6 +57,8 @@ public class SimpleBinarySearchTree {
     public String getInOrder() {
         StringBuilder order = new StringBuilder();
         inOrderIterate(this.root, order);
+
+        System.out.println(order.toString());
         return order.toString();
     }
 
@@ -70,6 +74,8 @@ public class SimpleBinarySearchTree {
     public String getPostOrder() {
         StringBuilder order = new StringBuilder();
         postOrderIterate(this.root, order);
+
+        System.out.println(order.toString());
         return order.toString();
     }
 

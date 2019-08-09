@@ -6,7 +6,7 @@ description: "Algorithms for Linked Lists"
 permalink: /linked-list-algorithms
 ---
 
-# Algorithms (Linked Lists)
+# Algorithms & Common Tasks (Linked Lists)
 {: .fs-9 }{: .no_toc }
 
 Mostly loop detection algorithms.
@@ -100,3 +100,10 @@ to iterate through the nodes, until you reach the same node and count the iterat
 ## 3). Detect if is a Circular Linked List
 Well, this is a tricky task, because you should not only detect if there is a loop, 
 but you also should keep in mind, that the length of the loop should be equal to the list size.
+
+## 4). Detect and remove loop form a linked list
+Detect the loop using Floyd’s Cycle detection algorithm and get the pointer to a loop node.
+Count the number of nodes in the loop. Let the count be N.
+Fix one pointer to the head and another to a Nth node from the head.
+Move both pointers at the same pace, they will meet at loop starting node.
+Get a pointer to the last node of the loop and make next of it as NULL.

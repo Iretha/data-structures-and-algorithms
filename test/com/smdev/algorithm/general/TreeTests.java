@@ -24,7 +24,7 @@ public class TreeTests {
         t2.insert(8);
 
         Assert.assertTrue(T09_SubTreeChecker.isSubTreePreOrder(t1, t2));
-        Assert.assertTrue(T09_SubTreeChecker.isSubTreePostOrder(t1, t2));
         Assert.assertTrue(T09_SubTreeChecker.isSubTreeInOrder(t1, t2));
+        Assert.assertTrue(T09_SubTreeChecker.isSubTreePostOrder(t1, t2));
     }
 }

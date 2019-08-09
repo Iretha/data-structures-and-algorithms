@@ -7,7 +7,7 @@ has_children: true
 permalink: /graph-algorithms
 ---
 
-# Algorithms (Graphs)
+# Algorithms & Common Tasks (Graphs)
 {: .fs-9 }
 
 Algorithms for traversing graphs
