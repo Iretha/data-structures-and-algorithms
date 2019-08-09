@@ -2,6 +2,7 @@ package com.smdev.algorithm.general;
 
 import com.smdev.algorithm.general.challenges.T06_LinkedListDuplicateRemover;
 import com.smdev.algorithm.general.challenges.T07_SumLists;
+import com.smdev.algorithm.general.challenges.T08_LinkedListLoopDetector;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -71,5 +72,40 @@ public class LinkedListTests {
         Assert.assertEquals(Integer.valueOf(5), res.pop());
         Assert.assertEquals(Integer.valueOf(4), res.pop());
         Assert.assertEquals(Integer.valueOf(2), res.pop());
+    }
+
+    @Test
+    public void test_T08_HasLoop() {
+        T08_LinkedListLoopDetector.Node n0 = new T08_LinkedListLoopDetector.Node(0);
+        T08_LinkedListLoopDetector.Node n1 = new T08_LinkedListLoopDetector.Node(1);
+        T08_LinkedListLoopDetector.Node n2 = new T08_LinkedListLoopDetector.Node(2);
+        T08_LinkedListLoopDetector.Node n3 = new T08_LinkedListLoopDetector.Node(3);
+        T08_LinkedListLoopDetector.Node n4 = new T08_LinkedListLoopDetector.Node(4);
+        T08_LinkedListLoopDetector.Node n5 = new T08_LinkedListLoopDetector.Node(5);
+
+        T08_LinkedListLoopDetector l1 = new T08_LinkedListLoopDetector();
+        Assert.assertFalse(l1.detectLoop());
+
+        T08_LinkedListLoopDetector l2 = new T08_LinkedListLoopDetector(n1);
+        Assert.assertFalse(l2.detectLoop());
+
+        T08_LinkedListLoopDetector l3 = new T08_LinkedListLoopDetector(n1, n2);
+        Assert.assertFalse(l3.detectLoop());
+
+        T08_LinkedListLoopDetector l4 = new T08_LinkedListLoopDetector(n1, n2, n2);
+        Assert.assertTrue(l4.detectLoop());
+
+        T08_LinkedListLoopDetector l5 = new T08_LinkedListLoopDetector(n1, n0, n1);
+        Assert.assertTrue(l5.detectLoop());
+
+        T08_LinkedListLoopDetector l7 = new T08_LinkedListLoopDetector(n0, n1, n1);
+        Assert.assertTrue(l7.detectLoop());
+
+        T08_LinkedListLoopDetector l8 = new T08_LinkedListLoopDetector(n1, n2, n3, n4, n5, n3);
+        Assert.assertTrue(l8.detectLoop());
+
+        T08_LinkedListLoopDetector l9 = new T08_LinkedListLoopDetector(n1, n5, n4, n3, n2, n1);
+        Assert.assertTrue(l9.detectLoop());
+
     }
 }

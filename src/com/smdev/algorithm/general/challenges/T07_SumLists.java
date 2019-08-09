@@ -18,10 +18,10 @@ public class T07_SumLists {
         int n1 = getNum(q1);
         int n2 = getNum(q2);
         int sum = n1 + n2;
-        return getAsStack(sum);
+        return getNumAsStack(sum);
     }
 
-    private static Stack<Integer> getAsStack(int num) {
+    private static Stack<Integer> getNumAsStack(int num) {
         Stack<Integer> q = new Stack<>();
         if (num == 0) {
             q.push(0);
