@@ -15,6 +15,7 @@ Algorithms for Тrees
 ---
 
 ## Binary Trees
+
 Name|Algorithm Type|Summary|Usage
 ---|---|---|---
 [Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorting Alg.|Sorted Binary Tree with super fast search/insert/delete of O(log N).|In many search applications, where data constantly changes. It will be sorted, while added.
@@ -24,7 +25,8 @@ Name|Algorithm Type|Summary|Usage
 You can use DFS with any of the traversal methods (pre/ in/ post) and export the order for both trees as strings.
 Then check if the first one order contains the second one, if yes - then the second tree is a subtree of the first.
 
-* Tree 1:
+* Tree 1
+
 ```
       5
     /   \
@@ -37,7 +39,8 @@ In order:   2 3 4 5 6 7 8
 Post order: 2 4 3 6 8 7 5 
 ```
 
-* Tree 2:
+* Tree 2
+
 ```
    7
   / \
