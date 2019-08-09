@@ -7,28 +7,23 @@ permalink: /linked-list-algorithms
 ---
 
 # Algorithms (Linked Lists)
-{: .fs-9 }
+{: .fs-9 }{: .no_toc }
 
 Mostly loop detection algorithms.
 {: .fs-6 .fw-300 }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 ---
 
 ## 1). Loop Detection Algorithms
 Here are 3 different approaches you can use:
 
-###  1.1). Hashing - O(N)
-You can iterate over the nodes and add them in a HashSet. If the node is already added,
-then there is a cycle.
-
-**This is kind of a brute force approach.**
-
-###  1.2). Mark Visited Nodes - O(N)
-You need to extend the Node class and add a flag (boolean), which shows if the node is visited.
-Then you need to iterate through the nodes and if the node is already visited, then there is a cycle.
-
-**This is kind of a brute force approach.**
-
-###  1.3). [Floyd’s Cycle-Finding Algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare) - O(N)
+###  1.1). [Floyd’s Cycle-Finding Algorithm](https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare) - O(N)
 The algorithm is also known as **Floyd's Tortoise and Hare**.
 
 You need 2 pointers (slow and fast), both starting from the same node.
@@ -74,7 +69,8 @@ Cycle Found| 1 (+ 1)| 1 (+ 2)
 ```
 
 * Example:
-```java
+
+```
 1 5 4 3 2 1
 
 Start At:   S: 1 | F: 1
@@ -84,6 +80,19 @@ Moving:     S: 3 | F: 5
 Moving:     S: 2 | F: 3
 Cycle:      S: 1 | F: 1
 ```
+
+###  1.2). Hashing - O(N)
+You can iterate over the nodes and add them in a HashSet. If the node is already added,
+then there is a cycle.
+
+**This is kind of a brute force approach.**
+
+###  1.3). Mark Visited Nodes - O(N)
+You need to extend the Node class and add a flag (boolean), which shows if the node is visited.
+Then you need to iterate through the nodes and if the node is already visited, then there is a cycle.
+
+**This is kind of a brute force approach.**
+
 ## 2). Find length of a loop in linked list
 The best approach is to use Floyd’s Cycle-Finding Algorithm and when you find the node, 
 to iterate through the nodes, until you reach the same node and count the iterations.
