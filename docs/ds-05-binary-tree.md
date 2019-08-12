@@ -104,11 +104,14 @@ An example of a complete binary tree is the binary heap.
    /
  30
 ```
+
 ## Traverse Algorithms (Search Algorithms):
-* Breadth First (Shortest Path Algorithms use it) - we search level by level, starting from root.
+
+* **Breadth First** (Shortest Path Algorithms use it) - we search level by level, starting from root.
 This means that we start from root (lvl 0), then we continue with the children of the root node (level 1), then with 
 level 3 etc.
-* Depth First - we start from root(level 0) and then we go deep to the highest level (level N)
+
+* **Depth First** - we start from root(level 0) and then we go deep to the highest level (level N)
 
 ## Depth First Traversal Types:
 There are 3 different ways, depending ot when you visit root:
@@ -121,9 +124,5 @@ There are 3 different ways, depending ot when you visit root:
 * **Pre**order (**Root**, Left, Right) : a -> b -> c
 * **Post**order (Left, Right, **Root**) : b -> c -> a
 
-## Algorithms, that use Binary Trees
+## [Algorithms for Trees](https://iretha.github.io/data-structures-and-algorithms/trees-algorithms)
 
-Name|Algorithm Type|Summary|Usage
----|---|---|---
-[Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorting Alg.|Sorted Binary Tree with super fast search/insert/delete of O(log N).|In many search applications, where data constantly changes. It will be sorted, while added.
-[Binary Heap MAX/MIN](https://iretha.github.io/data-structures-and-algorithms/binary-heap)|Sorting Alg.|To find/ extract MAX/MIN value super fast with complexity of O(1) | Priority Queues (esp. OS & kernels), Scheduling, Routing, Shortest Path Alg.

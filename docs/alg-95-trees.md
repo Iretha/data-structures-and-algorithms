@@ -16,6 +16,8 @@ Algorithms for Тrees
 
 ## Binary Trees
 
+Start with these two algorithms, that are the basis for most of the tasks. 
+
 Name|Algorithm Type|Summary|Usage
 ---|---|---|---
 [Binary Search Tree (BST)](https://iretha.github.io/data-structures-and-algorithms/binary-search-tree)|Sorting Alg.|Sorted Binary Tree with super fast search/insert/delete of O(log N).|In many search applications, where data constantly changes. It will be sorted, while added.
@@ -23,7 +25,7 @@ Name|Algorithm Type|Summary|Usage
 
 ### [How to check if a tree is a subtree of another tree](https://github.com/Iretha/data-structures-and-algorithms/blob/master/test/com/smdev/algorithm/general/TreeTests.java)
 You can use DFS with any of the traversal methods (pre/ in/ post) and export the order for both trees as strings.
-Then check if the first one order contains the second one, if yes - then the second tree is a subtree of the first.
+Then check if the first one contains the second one, if yes - then the second tree is a subtree of the first.
 
 * Tree 1
 
