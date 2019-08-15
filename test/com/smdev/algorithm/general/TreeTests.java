@@ -1,6 +1,7 @@
 package com.smdev.algorithm.general;
 
 import com.smdev.algorithm.general.challenges.T09_SubTreeChecker;
+import com.smdev.datastructures.RandomBinaryTree;
 import com.smdev.datastructures.SimpleBinarySearchTree;
 import org.junit.Assert;
 import org.junit.Test;
@@ -27,4 +28,36 @@ public class TreeTests {
         Assert.assertTrue(T09_SubTreeChecker.isSubTreeInOrder(t1, t2));
         Assert.assertTrue(T09_SubTreeChecker.isSubTreePostOrder(t1, t2));
     }
+
+    @Test
+    public void testPathWithSum(){
+        //        10
+        //       /  \
+        //      5   -3
+        //     / \    \
+        //    3   2   11
+        //   / \   \
+        //  3 -2   1
+        RandomBinaryTree tree = new RandomBinaryTree();
+
+        // 10
+        RandomBinaryTree.Node lvl0_10 = tree.add(null, 10, true);
+        // 10 -> 5
+        RandomBinaryTree.Node lvl1_5 = tree.add(lvl0_10, 5, true);
+        // 10 -> 5 -> 3
+        RandomBinaryTree.Node lvl2_3 = tree.add(lvl1_5, 3, true);
+        // 10 -> 5 -> 3 -> 3
+        RandomBinaryTree.Node lvl3_3 = tree.add(lvl2_3, 3, true);
+        // 10 -> 5 -> 3 -> -2
+        RandomBinaryTree.Node lvl3_2 = tree.add(lvl2_3, -2, false);
+        // 10 -> 5 -> 2
+        RandomBinaryTree.Node lvl2_2 = tree.add(lvl1_5, 2, false);
+        // 10 -> 5 -> 2 -> 1
+        RandomBinaryTree.Node lvl3_1 = tree.add(lvl1_5, 1, false);
+        // 10 -> -3
+        RandomBinaryTree.Node lvl1_3 = tree.add(lvl0_10, -3, false);
+        // 10 -> -3 -> 11
+        RandomBinaryTree.Node lvl2_11 = tree.add(lvl1_3, 11, false);
+    }
+
 }
