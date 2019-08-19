@@ -35,7 +35,7 @@ public class TreeTests {
         //       /  \
         //      5   -3
         //     / \    \
-        //    3   2   11
+        //    3   2   12
         //   / \   \
         //  3 -2   1
         RandomBinaryTree tree = new RandomBinaryTree();
@@ -53,11 +53,47 @@ public class TreeTests {
         // 10 -> 5 -> 2
         RandomBinaryTree.Node lvl2_2 = tree.add(lvl1_5, 2, false);
         // 10 -> 5 -> 2 -> 1
-        RandomBinaryTree.Node lvl3_1 = tree.add(lvl1_5, 1, false);
+        RandomBinaryTree.Node lvl3_1 = tree.add(lvl2_2, 1, false);
         // 10 -> -3
         RandomBinaryTree.Node lvl1_3 = tree.add(lvl0_10, -3, false);
         // 10 -> -3 -> 11
-        RandomBinaryTree.Node lvl2_11 = tree.add(lvl1_3, 11, false);
+        RandomBinaryTree.Node lvl2_12 = tree.add(lvl1_3, 12, false);
+
+        // Challenge 1: Given a binary tree that can contain positive or negative keys,
+        // design an algorithm to check if there is a path with the given sum.
+        // The path should start from root to leaf and must go downwards from parent to child.
+        // 10 -> -3 -> 12
+        Assert.assertTrue(tree.hasPathSum(19));
+        // 10 -> 5 -> 2 -> 1
+        Assert.assertTrue(tree.hasPathSum(18));
+        // 10 -> 5 -> 3 -> -2
+        Assert.assertTrue(tree.hasPathSum(16));
+        // 10 -> 5 -> 3 -> 3
+        Assert.assertTrue(tree.hasPathSum(21));
+
+        // Challenge 2: Given a binary tree that can contain positive or negative keys,
+        // design an algorithm to check if there is a sub path with the given sum.
+        // The path does not necessary start from root or end to leaf, but must go downwards from parent to child.
+        // 10 -> -3 -> 12
+        Assert.assertTrue(tree.hasSubPathSum(19));
+        // 10 -> -3
+        Assert.assertTrue(tree.hasSubPathSum(7));
+        // -3 -> 12
+        Assert.assertTrue(tree.hasSubPathSum(9));
+        // 5 -> 3 / 5 -> 2 -> 1
+        Assert.assertTrue(tree.hasSubPathSum(8));
+        // 3 -> 3
+        Assert.assertTrue(tree.hasSubPathSum(6));
+
+        Assert.assertFalse(tree.hasSubPathSum(0));
+        Assert.assertFalse(tree.hasSubPathSum(-10));
+
+        // Challenge 3: Given a binary tree that can contain positive or negative keys,
+        // design an algorithm to count the number of paths that sum to a given value.
+        // The path does not need to start or end at the root or a leaf, but it must
+        // go downwards from parent to child.
+        // Now we are in a position to count paths
+        //Assert.assertEquals(3, tree.countPathsWithSum(8));
     }
 
 }
