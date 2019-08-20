@@ -93,7 +93,8 @@ public class TreeTests {
         // The path does not need to start or end at the root or a leaf, but it must
         // go downwards from parent to child.
         // Now we are in a position to count paths
-        //Assert.assertEquals(3, tree.countPathsWithSum(8));
+        Assert.assertEquals(2, tree.countPathsWithSum(8));
+        Assert.assertEquals(2, tree.countPathsWithSum(7));
     }
 
 }
