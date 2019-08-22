@@ -25,7 +25,7 @@ permalink: /arrays
 ## ArrayLists (aka. Dynamic Arrays)
 The internal implementation of the ArrayList uses an array.
 
-* They may contain: wrappers, objects, custom types; 
+* They may contain: wrappers, objects, custom types, bu **no primitives**; 
 * They have initial capacity (of 10 elements) and can grow dynamically
 * They offer **random access** to elements - you can use the index to access any element at any time;
 * **The access to any element of the array (get/ set) by index is a constant time O(1), which is extremely fast**
