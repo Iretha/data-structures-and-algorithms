@@ -34,7 +34,7 @@ on until we hit the first position, where should be the MIN element.
 ## Properties
 * Stable
 * O(1) extra space
-* O(n2) comparisons and swaps
+* O(n^2) comparisons and swaps
 * Adaptive: O(n) when nearly sorted
 
 ## Usage

@@ -37,6 +37,14 @@ Relatively fast - O(nlog(n))
 ## Cons
 * Requires extra space (as you are copying and duplicating arrays and it's content)
 
+## Properties
+* Stable
+* Θ(n) extra space for arrays
+* Θ(lg(n)) extra space for linked lists
+* Θ(n·lg(n)) time
+* Not adaptive
+* Does not require random access to data
+
 ## Usage
 * You can combine arrays and sort the elements or to remove duplicates
 * For sorting Linked Lists
