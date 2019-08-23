@@ -41,6 +41,11 @@ on until we hit the first position, where should be the MIN element.
 - Not used in practise, because of it's runtime except the cases of very small amount of data, 
 that is almost sorted
 
+## Animations, illustrating the algorithm
+![Bubble sort steps](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
+
+![Bubble sort](https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif)
+
 ## Implementation
 ```java
     public static int[] sort(int[] arr) {
@@ -77,3 +82,11 @@ Initial: [9, 1, 6, 2, 5, 3, 7]
 [1, 2, 3, 5, 6, 7, 9]
 Sorted:  [1, 2, 3, 5, 6, 7, 9]
 ```
+
+## Useful Links
+
+[Very Cool Animations from Toptal](https://www.toptal.com/developers/sorting-algorithms/bubble-sort)
+
+[Bubble Sort in Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+
+[Bubble Sort Hackerearth Visualizer](https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/)
