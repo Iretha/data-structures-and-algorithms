@@ -31,7 +31,7 @@ Relatively fast - O(nlog(n))
 ## Pros
 * Pretty efficient sorting algorithm - O(n log(n))
 * Can be used for external sorting (when memory is not enough, you may use external memory (like HDD or smth else))
-* Highly parallelizeable
+* Highly parallelizable
 * Can be used to implement a stable sort
 
 ## Cons
@@ -52,6 +52,11 @@ Relatively fast - O(nlog(n))
 * **External sorting** - External sorting is a class of sorting algorithms that can handle massive amounts of data. 
 External sorting is required when the data being sorted do not fit into the main memory of a computing device (usually RAM) 
 and instead they must reside in the slower external memory, usually a hard disk drive. 
+
+## Animations, illustrating the algorithm
+![Merge sort steps](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
+
+![Merge sort](https://upload.wikimedia.org/wikipedia/commons/e/e6/Merge_sort_algorithm_diagram.svg)
 
 ## Implementation
 ```java
@@ -111,3 +116,11 @@ Merged: [2, 3, 5, 7]
 Merged: [1, 2, 3, 5, 6, 7, 9]
 Sorted:  [1, 2, 3, 5, 6, 7, 9]
 ```
+
+## Useful Links
+
+[Very Cool Animations from Toptal](https://www.toptal.com/developers/sorting-algorithms/merge-sort)
+
+[Merge Sort in Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+
+[Merge Sort Hackerearth Visualizer](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/visualize/)
