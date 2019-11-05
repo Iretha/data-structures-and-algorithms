@@ -23,13 +23,11 @@ public class C05_SieveOfEratosthenes {
         }
 
         // mark every N-th element as not prime
-        Integer step;
         for (int idx = 2; idx < Math.sqrt(max); idx++) {
-            step = numbers.get(idx);
-            if (step == -1 || idx + step >= numbers.size()) {
+            if (numbers.get(idx) == -1 || idx * idx >= numbers.size()) {
                 continue; // already marked as not-a-prime number or out of range
             }
-            for (int y = idx + step; y <= max; y = y + step) {
+            for (int y = idx * idx; y <= max; y += idx) {
                 numbers.set(y, -1); // mark as not-a-prime number
             }
         }
