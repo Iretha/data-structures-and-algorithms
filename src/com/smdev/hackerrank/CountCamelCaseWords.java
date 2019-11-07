@@ -10,8 +10,7 @@ public class CountCamelCaseWords {
         if(s == null || s.trim().length() == 0){
             return 0;
         }
-        String[] strs = s.split("[A-Z]+");
-        return strs.length;
+        return s.split("[A-Z]+").length;
     }
 
     public static void main(String[] args) {
