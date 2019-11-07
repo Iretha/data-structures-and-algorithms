@@ -40,6 +40,9 @@ algorithm requires an extra space, because it creates/ generates new instances.
 Bubble sort is in-place sorting algorithm and does not require an extra space, so it's space complexity is O(1).
 On the other side, the merge sort creates new arrays and  it takes Θ(n) extra space for arrays.
 
+#### Array Sorting Algorithms
+![Array Sorting Algorithms](images/array-complexity-sorting-alg.png)
+
 ### How many comparisons or swaps are performed (Time Complexity)?
 How many iterations are needed and what is the time complexity?
 This requires some understanding in [Big O Notation](/big-o-notation)
