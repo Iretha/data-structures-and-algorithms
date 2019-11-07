@@ -22,14 +22,18 @@ The fastest one. It always takes a constant time to do something, regardless the
 
 I.e. To access to element in an array by it's index.
 
+
 ### Logarithmic Time - O(log N) : Search Algorithms (In Sorted Collections)
+Runtime grows logarithmically in proportion to n.
 ```java
  for (x = n; x >= 1; x = x/2) {
         console.log(x);
     }
 ```
+
 I.e. if it takes 1 second to compute 10 elements, it will take 2 seconds to compute 100 elements, 
 3 seconds to compute 1000 elements, and so on. An example is the binary search.
+
 
 ### Linear Time - O(N) : Looping a collection
 We have linear time, when the complexity depends on the number of the elements. If the number of elements increases/ decreases, 
@@ -41,9 +45,15 @@ the time also increases/ decreases with the same rate (linearly).
 
 - If you loop two different collections in a single algorithm, you should add their times: O(N + M)
 
+```java
+ for (x = 0; x < n; x++) {
+        console.log(x);
+    }
+```
+
 I.e. when we have to iterate the elements of a collection to do/ find something i.e. to find an element in an array.
 
-### Quasilinear Time - O(N log N) : Sorting algorithms
+### Quasilinear Time - O(N log N) or Superlinear algorithm : Sorting algorithms
 
 I.e. when each element have to be compared with every other element.
 
@@ -133,3 +143,12 @@ Remember the order of the complexity types in terms of efficiency and be careful
 ## Examples
 
 Check the [sources](https://github.com/Iretha/data-structures-and-algorithms/tree/master/src/com/smdev/big_o_notation) for examples.
+
+```java
+▪ Logarithmic algorithm – O(logn) – Binary Search
+▪ Linear algorithm – O(n) – Linear Search
+▪ Superlinear algorithm – O(nlogn) – Heap Sort, Merge Sort
+▪ Polynomial algorithm – O(n^c) – Strassen’s Matrix Multiplication, Bubble Sort, Selection Sort, Insertion Sort, Bucket Sort
+▪ Exponential algorithm – O(c^n) – Tower of Hanoi
+▪ Factorial algorithm – O(n!) – Determinant Expansion by Minors, Brute force Search algorithm for Traveling Salesman Problem
+```
