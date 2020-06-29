@@ -13,56 +13,56 @@ public class Tower_of_Hanoi_BackTracking_Stack {
         Stack<Integer> poleC = new Stack();
 
         Stack<Integer>[] initialState = new Stack[]{poleA, poleB, poleC};
-        List<Stack<Integer>[]> moves = solveTowerOfHanoi(new Stack(), new Stack(), initialState);
+        Stack<Stack<Integer>[]> moves = solveTowerOfHanoi(new Stack(), new Stack(), initialState);
         moves.forEach(stack -> System.out.println(Arrays.toString(stack)));
     }
 
-    public static List<Stack<Integer>[]> solveTowerOfHanoi(Stack<Stack<Integer>[]> visitedStates, Stack<Stack<Integer>[]> currentMoves, Stack<Integer>[] poles) {
-        visitedStates.push(poles);
-        currentMoves.push(poles);
+    public static Stack<Stack<Integer>[]> solveTowerOfHanoi(Stack<Stack<Integer>[]> visitedStates, Stack<Stack<Integer>[]> currPath, Stack<Integer>[] state) {
+        visitedStates.push(state); // add to history
+        currPath.push(state); // add to current path
 
-        Set<Stack<Integer>[]> nextPossibleMoves = calcNextPossibleMoves(poles);
-        for (Stack<Integer>[] move : nextPossibleMoves) {
-            if (move != null && !isVisited(visitedStates, move)) {
-                solveTowerOfHanoi(visitedStates, currentMoves, move);
-                if (!isSolutionFound(currentMoves)) {
-                    currentMoves.pop();
+        Set<Stack<Integer>[]> nextStates = calcNextStates(state);
+        for (Stack<Integer>[] nextState : nextStates) {
+            if (nextState != null && !isVisited(visitedStates, nextState)) {
+                solveTowerOfHanoi(visitedStates, currPath, nextState);
+                if (isSolved(currPath)) {
+                    return currPath; // solution found
                 } else {
-                    return currentMoves;
+                    currPath.pop(); // remove from current path
                 }
             }
         }
-        return currentMoves;
+        return currPath;
     }
 
-    private static boolean isSolutionFound(List<Stack<Integer>[]> moves) {
+    private static boolean isSolved(List<Stack<Integer>[]> moves) {
         Stack<Integer>[] lastMove = !moves.isEmpty() ? moves.get(moves.size() - 1) : null;
-        return lastMove != null && lastMove[2].size() == 3;
+        return lastMove != null && lastMove[2].size() == 3; // 3 disks on the last pole => solved
     }
 
-    private static Set<Stack<Integer>[]> calcNextPossibleMoves(Stack<Integer>[] currentState) {
-        Set<Stack<Integer>[]> possibleMoves = new HashSet<>();
-        possibleMoves.add(calcMove(currentState, 0, 2));
-        possibleMoves.add(calcMove(currentState, 0, 1));
-        possibleMoves.add(calcMove(currentState, 1, 2));
-        possibleMoves.add(calcMove(currentState, 1, 0));
-        possibleMoves.add(calcMove(currentState, 2, 1));
-        possibleMoves.add(calcMove(currentState, 2, 0));
-        return possibleMoves;
+    private static Set<Stack<Integer>[]> calcNextStates(Stack<Integer>[] currentState) {
+        Set<Stack<Integer>[]> nextStates = new HashSet<>();
+        nextStates.add(makeMove(currentState, 0, 2));
+        nextStates.add(makeMove(currentState, 0, 1));
+        nextStates.add(makeMove(currentState, 1, 2));
+        nextStates.add(makeMove(currentState, 1, 0));
+        nextStates.add(makeMove(currentState, 2, 1));
+        nextStates.add(makeMove(currentState, 2, 0));
+        return nextStates;
     }
 
-    private static Stack<Integer>[] calcMove(Stack<Integer>[] initialState, int source, int target) {
-        Stack<Integer> sourcePole = initialState[source];
+    private static Stack<Integer>[] makeMove(Stack<Integer>[] state, int source, int target) {
+        Stack<Integer> sourcePole = state[source];
         if (sourcePole.isEmpty()) {
             return null;
         }
 
         Stack<Integer>[] nextMove = null;
-        Stack<Integer> targetPole = initialState[target];
+        Stack<Integer> targetPole = state[target];
         if (targetPole.isEmpty() || sourcePole.peek() < targetPole.peek()) {
-            Stack<Integer> poleA = (Stack) initialState[0].clone();
-            Stack<Integer> poleB = (Stack) initialState[1].clone();
-            Stack<Integer> poleC = (Stack) initialState[2].clone();
+            Stack<Integer> poleA = (Stack) state[0].clone();
+            Stack<Integer> poleB = (Stack) state[1].clone();
+            Stack<Integer> poleC = (Stack) state[2].clone();
             nextMove = new Stack[]{poleA, poleB, poleC};
             nextMove[target].push(nextMove[source].pop());
         }
