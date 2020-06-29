@@ -21,7 +21,7 @@ public class Tower_of_Hanoi_BackTracking_Stack {
         visitedStates.push(state); // add to history
         currPath.push(state); // add to current path
 
-        Set<Stack<Integer>[]> nextStates = calcNextStates(state);
+        List<Stack<Integer>[]> nextStates = calcNextStates(state);
         for (Stack<Integer>[] nextState : nextStates) {
             if (nextState != null && !isVisited(visitedStates, nextState)) {
                 solveTowerOfHanoi(visitedStates, currPath, nextState);
@@ -40,8 +40,8 @@ public class Tower_of_Hanoi_BackTracking_Stack {
         return lastMove != null && lastMove[2].size() == 3; // 3 disks on the last pole => solved
     }
 
-    private static Set<Stack<Integer>[]> calcNextStates(Stack<Integer>[] currentState) {
-        Set<Stack<Integer>[]> nextStates = new HashSet<>();
+    private static List<Stack<Integer>[]> calcNextStates(Stack<Integer>[] currentState) {
+        List<Stack<Integer>[]> nextStates = new ArrayList<>();
         nextStates.add(makeMove(currentState, 0, 2));
         nextStates.add(makeMove(currentState, 0, 1));
         nextStates.add(makeMove(currentState, 1, 2));
