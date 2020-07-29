@@ -117,4 +117,18 @@ public class LinkedListTest {
         Assert.assertTrue(!linkedList.contains(2));
         Assert.assertTrue(linkedList.contains(3));
     }
+
+
+    @Test
+    public void reverse(){
+        linkedList.addBack(1);
+        linkedList.addBack(2);
+        linkedList.addBack(3);
+
+        linkedList.reverse();
+
+        Assert.assertEquals(3, linkedList.size());
+        Assert.assertEquals(3, linkedList.getFirst());
+        Assert.assertEquals(1, linkedList.getLast());
+    }
 }

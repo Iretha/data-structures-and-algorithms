@@ -154,4 +154,21 @@ public class LinkedList<T> {
         }
         return curr;
     }
+
+    public void reverse(){
+        if(this.head == null || this.head.next == null){
+            return;
+        }
+
+        Node first = this.head;
+        Node second = this.head.next;
+        Node third;
+        while(second != null){
+            third = second.next;
+            second.next = first;
+            first = second;
+            second = third;
+        }
+        this.head = first;
+    }
 }
