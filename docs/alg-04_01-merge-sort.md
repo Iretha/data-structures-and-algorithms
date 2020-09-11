@@ -6,16 +6,19 @@ nav_order: 241
 description: "Merge Sort"
 permalink: /merge-sort
 ---
-# Merge Sort
+# Merge Sort (Divide and Conquer)
 {: .fs-9 }
 
 Divide and Conquer type of algorithms. We split the array into two sub-arrays until you reach the smallest possible sub-arrays (from 1 element), then merge them back, while sorting.
 The Time Complexity is O(N log(N), which is relatively fast.
+
+    !!! Divide and Conquer ==> Recursion !!!
 {: .fs-6 .fw-300 }
 ---
 
 ## Description
-You split the array in halves until you reach the smallest possible sub-arrays, then merge them back.
+You split the array in halves until you reach the smallest possible sub
+-arrays, then merge them back, while ordering elements from min to max.
 
 ### Steps:
 MergeSort(arr[], l,  r)
@@ -23,7 +26,7 @@ If r > l
 1. Find the middle of the array: m = (l+r)/2
 2. Invoke mergeSort(arr, l, m) for the first half
 3. Invoke mergeSort(arr, l, m) for the second half
-4. Merge them back, while sorting
+4. Merge them back, while ordering elements from min to max.
 
 ## Runtime Characteristics
 Relatively fast - O(nlog(n))
@@ -40,9 +43,9 @@ Relatively fast - O(nlog(n))
 ## Properties
 * Stable
 * Θ(n) extra space for arrays
-* Θ(lg(n)) extra space for linked lists
-* Θ(n·lg(n)) time
-* Not adaptive
+* Θ(log(n)) extra space for linked lists
+* Θ(n·log(n)) time
+* Not adaptive - time complexity does not improve under special conditions
 * Does not require random access to data
 
 ## Usage
@@ -64,45 +67,46 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    public static int[] mergeSort(int[] arr) {
-        if (arr == null || arr.length == 0 || arr.length == 1) {
-            return arr;
-        }
-        int midIdx = arr.length / 2;
-        int[] arr1 = mergeSort(Arrays.copyOfRange(arr, 0, midIdx));
-        int[] arr2 = mergeSort(Arrays.copyOfRange(arr, midIdx, arr.length));
-        return merge(arr1, arr2);
-    }
-
-    public static int[] merge(int[] arr1, int[] arr2) {
-        int len1 = arr1.length;
-        int len2 = arr2.length;
-        int[] merged = new int[len1 + len2];
-
-        int pointer1 = 0;
-        int pointer2 = 0;
-        int idx = 0;
-        while (pointer1 < len1 && pointer2 < len2) {// both arrays still have elements
-            if (arr1[pointer1] < arr2[pointer2]) {
-                merged[idx++] = arr1[pointer1++];
-            } else if (arr2[pointer2] < arr1[pointer1]) {
-                merged[idx++] = arr2[pointer2++];
-            } else {
-                // copy only 1 value here if you want to remove the duplicates
-                merged[idx++] = arr1[pointer1++];
-                merged[idx++] = arr2[pointer2++];
+    public static int[] sort(int[] arr) {
+            if (arr == null || arr.length < 2) {
+                return arr;
             }
+            int mid = arr.length / 2;
+            int[] leftArr = sort(Arrays.copyOfRange(arr, 0, mid));
+            int[] rightArr = sort(Arrays.copyOfRange(arr, mid, arr.length));
+            return mergeArrays(leftArr, rightArr);
         }
-
-        while (pointer1 < len1 && pointer2 >= len2) {// arr1 still has elements
-            merged[idx++] = arr1[pointer1++];
+    
+        private static int[] mergeArrays(int[] a1, int[] a2) {
+            int[] merged = new int[a1.length + a2.length];
+    
+            int idx1 = 0;
+            int idx2 = 0;
+            for (int i = 0; i < merged.length; i++) {
+                if (idx1 == a1.length) { // copy a2
+                    while (i < merged.length) {
+                        merged[i] = a2[idx2];
+                        i++;
+                        idx2++;
+                    }
+                } else if (idx2 == a2.length) { // copy a1
+                    while (i < merged.length) {
+                        merged[i] = a1[idx1];
+                        i++;
+                        idx1++;
+                    }
+                } else {
+                    if (a1[idx1] < a2[idx2]) {
+                        merged[i] = a1[idx1];
+                        idx1++;
+                    } else {
+                        merged[i] = a2[idx2];
+                        idx2++;
+                    }
+                }
+            }
+            return merged;
         }
-
-        while (pointer2 < len2 && pointer1 >= len1) {// arr2 still has elements
-            merged[idx++] = arr2[pointer2++];
-        }
-        return merged;
-    }
 } 
 ```
 ## Example

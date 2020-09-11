@@ -4,6 +4,48 @@ import java.util.Arrays;
 
 public class MergeSort {
 
+    public static int[] sort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return arr;
+        }
+        int mid = arr.length / 2;
+        int[] leftArr = sort(Arrays.copyOfRange(arr, 0, mid));
+        int[] rightArr = sort(Arrays.copyOfRange(arr, mid, arr.length));
+        return mergeArrays(leftArr, rightArr);
+    }
+
+    private static int[] mergeArrays(int[] a1, int[] a2) {
+        int[] merged = new int[a1.length + a2.length];
+
+        int idx1 = 0;
+        int idx2 = 0;
+        for (int i = 0; i < merged.length; i++) {
+            if (idx1 == a1.length) { // copy a2
+                while (i < merged.length) {
+                    merged[i] = a2[idx2];
+                    i++;
+                    idx2++;
+                }
+            } else if (idx2 == a2.length) { // copy a1
+                while (i < merged.length) {
+                    merged[i] = a1[idx1];
+                    i++;
+                    idx1++;
+                }
+            } else {
+                if (a1[idx1] < a2[idx2]) {
+                    merged[i] = a1[idx1];
+                    idx1++;
+                } else {
+                    merged[i] = a2[idx2];
+                    idx2++;
+                }
+            }
+        }
+        return merged;
+    }
+
+
     public static int[] mergeSort(int[] arr) {
         if (arr == null || arr.length == 0 || arr.length == 1) {
             return arr;
