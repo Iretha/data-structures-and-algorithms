@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Quick Sort
-parent: Algorithms (Sorting)
+parent: Advanced Sorting Algorithms
 nav_order: 250
 description: "Quick Sort"
 permalink: /quick-sort

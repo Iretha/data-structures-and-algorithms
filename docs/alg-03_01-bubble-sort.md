@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Bubble Sort
-parent: Algorithms (Sorting)
-nav_order: 230
+parent: Elementary Sorting Algorithms
+nav_order: 231
 description: "Bubble Sort"
 permalink: /bubble-sort
 ---
-# Bubble Sort
+# Bubble Sort (Elementary Sorting)
 {: .fs-9 }
 
 Relatively slow sorting algorithm, that does in-place sorting (sorts the array itself) and does
@@ -26,10 +26,12 @@ on until we hit the first position, where should be the MIN element.
 ## Pros
 - In-place sorting, does not generate new objects (no additional memory usage)
 - The fastest on an extremely small and/or nearly sorted set of data
+- Better than Selection Sort
 
 ## Cons
-- No really fast
+- Not really fast
 - Not appropriate for large data sets
+- Prefer Insertion Sort over Bubble Sort
 
 ## Properties
 * Stable

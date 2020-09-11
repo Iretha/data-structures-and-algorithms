@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Merge Sort
-parent: Algorithms (Sorting)
-nav_order: 240
+parent: Advanced Sorting Algorithms
+nav_order: 241
 description: "Merge Sort"
 permalink: /merge-sort
 ---
