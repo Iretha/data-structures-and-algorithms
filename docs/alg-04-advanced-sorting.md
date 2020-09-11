@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Advanced Sorting Algorithms
+title: Advanced Sorting
 parent: Algorithms (Sorting)
 nav_order: 240
 description: "Advanced Sorting"

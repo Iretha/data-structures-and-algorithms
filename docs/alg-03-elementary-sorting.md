@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Elementary Sorting Algorithms
+title: Elementary Sorting
 parent: Algorithms (Sorting)
 nav_order: 230
 description: "Elementary Sorting"
@@ -10,7 +10,7 @@ permalink: /elementary-sorting
 # Elementary Sorting Algorithms
 {: .fs-9 }
 
-Elemntary
+Elementary
 {: .fs-6 .fw-300 }
 ---
 

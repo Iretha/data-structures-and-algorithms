@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bubble Sort
-parent: Elementary Sorting Algorithms
+parent: Elementary Sorting
 nav_order: 231
 description: "Bubble Sort"
 permalink: /bubble-sort

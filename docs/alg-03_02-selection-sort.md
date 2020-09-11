@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Selection Sort
-parent: Elementary Sorting Algorithms
+parent: Elementary Sorting
 nav_order: 235
 description: "Selection Sort"
 permalink: /selection-sort

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Insertion Sort
-parent: Elementary Sorting Algorithms
+parent: Elementary Sorting
 nav_order: 237
 description: "Insertion Sort"
 permalink: /insertion-sort
