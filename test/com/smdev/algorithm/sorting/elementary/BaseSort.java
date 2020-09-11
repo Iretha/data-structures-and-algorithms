@@ -1,18 +1,18 @@
-package com.smdev.algorithm.sorting;
+package com.smdev.algorithm.sorting.elementary;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-public class BubbleSortTest {
+public abstract class BaseSort {
 
     @Test
-    public void testSort() {
+    public void testSort1() {
         int[] array = {5, 1, 4, 2, 8};
         System.out.println("Initial: " + Arrays.toString(array));
 
-        int[] sorted = BubbleSort.sort(array);
+        int[] sorted = sort(array);
         System.out.println("Sorted:  " + Arrays.toString(sorted));
 
         Assert.assertEquals(1, sorted[0]);
@@ -27,7 +27,7 @@ public class BubbleSortTest {
         int arr[] = {4, 7, 14, 1, 3, 9, 17};
         System.out.println("Initial: " + Arrays.toString(arr));
 
-        int[] sorted = BubbleSort.sort(arr);
+        int[] sorted = sort(arr);
         System.out.println("Sorted:  " + Arrays.toString(sorted));
 
         Assert.assertEquals(1, sorted[0]);
@@ -44,7 +44,7 @@ public class BubbleSortTest {
         int arr[] = {9, 1, 6, 2, 5, 3, 7};
         System.out.println("Initial: " + Arrays.toString(arr));
 
-        int[] sorted = BubbleSort.sort(arr);
+        int[] sorted = sort(arr);
         System.out.println("Sorted:  " + Arrays.toString(sorted));
 
         Assert.assertEquals(1, sorted[0]);
@@ -56,4 +56,5 @@ public class BubbleSortTest {
         Assert.assertEquals(9, sorted[6]);
     }
 
+    protected abstract int[] sort(int[] array);
 }

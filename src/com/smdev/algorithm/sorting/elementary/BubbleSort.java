@@ -1,10 +1,30 @@
-package com.smdev.algorithm.sorting;
+package com.smdev.algorithm.sorting.elementary;
 
 import java.util.Arrays;
 
 public class BubbleSort {
 
     public static int[] sort(int[] arr) {
+        if (arr == null) {
+            return null;
+        }
+
+        int maxLen = arr.length;
+        int tmp;
+        while (maxLen > 1) {
+            for (int i = 1; i < maxLen; i++) {
+                if (arr[i - 1] > arr[i]) {
+                    tmp = arr[i - 1];
+                    arr[i - 1] = arr[i];
+                    arr[i] = tmp;
+                }
+            }
+            maxLen--;
+        }
+        return arr;
+    }
+
+    public static int[] sort0(int[] arr) {
         if (arr == null || arr.length == 0 || arr.length == 1) {
             return arr;
         }
