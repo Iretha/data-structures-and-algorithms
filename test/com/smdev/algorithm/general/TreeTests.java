@@ -3,13 +3,13 @@ package com.smdev.algorithm.general;
 import com.smdev.algorithm.general.challenges.T09_SubTreeChecker;
 import com.smdev.datastructures.RandomBinaryTree;
 import com.smdev.datastructures.SimpleBinarySearchTree;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class TreeTests {
+class TreeTests {
 
     @Test
-    public void test_T09_CheckSubtree(){
+    void test_T09_CheckSubtree(){
         SimpleBinarySearchTree t1 = new SimpleBinarySearchTree();
         t1.insert(5);
         t1.insert(3);
@@ -24,13 +24,13 @@ public class TreeTests {
         t2.insert(6);
         t2.insert(8);
 
-        Assert.assertTrue(T09_SubTreeChecker.isSubTreePreOrder(t1, t2));
-        Assert.assertTrue(T09_SubTreeChecker.isSubTreeInOrder(t1, t2));
-        Assert.assertTrue(T09_SubTreeChecker.isSubTreePostOrder(t1, t2));
+        Assertions.assertTrue(T09_SubTreeChecker.isSubTreePreOrder(t1, t2));
+        Assertions.assertTrue(T09_SubTreeChecker.isSubTreeInOrder(t1, t2));
+        Assertions.assertTrue(T09_SubTreeChecker.isSubTreePostOrder(t1, t2));
     }
 
     @Test
-    public void testPathWithSum(){
+    void testPathWithSum(){
         //        10
         //       /  \
         //      5   -3
@@ -63,38 +63,38 @@ public class TreeTests {
         // design an algorithm to check if there is a path with the given sum.
         // The path should start from root to leaf and must go downwards from parent to child.
         // 10 -> -3 -> 12
-        Assert.assertTrue(tree.hasPathSum(19));
+        Assertions.assertTrue(tree.hasPathSum(19));
         // 10 -> 5 -> 2 -> 1
-        Assert.assertTrue(tree.hasPathSum(18));
+        Assertions.assertTrue(tree.hasPathSum(18));
         // 10 -> 5 -> 3 -> -2
-        Assert.assertTrue(tree.hasPathSum(16));
+        Assertions.assertTrue(tree.hasPathSum(16));
         // 10 -> 5 -> 3 -> 3
-        Assert.assertTrue(tree.hasPathSum(21));
+        Assertions.assertTrue(tree.hasPathSum(21));
 
         // Challenge 2: Given a binary tree that can contain positive or negative keys,
         // design an algorithm to check if there is a sub path with the given sum.
         // The path does not necessary start from root or end to leaf, but must go downwards from parent to child.
         // 10 -> -3 -> 12
-        Assert.assertTrue(tree.hasSubPathSum(19));
+        Assertions.assertTrue(tree.hasSubPathSum(19));
         // 10 -> -3
-        Assert.assertTrue(tree.hasSubPathSum(7));
+        Assertions.assertTrue(tree.hasSubPathSum(7));
         // -3 -> 12
-        Assert.assertTrue(tree.hasSubPathSum(9));
+        Assertions.assertTrue(tree.hasSubPathSum(9));
         // 5 -> 3 / 5 -> 2 -> 1
-        Assert.assertTrue(tree.hasSubPathSum(8));
+        Assertions.assertTrue(tree.hasSubPathSum(8));
         // 3 -> 3
-        Assert.assertTrue(tree.hasSubPathSum(6));
+        Assertions.assertTrue(tree.hasSubPathSum(6));
 
-        Assert.assertFalse(tree.hasSubPathSum(0));
-        Assert.assertFalse(tree.hasSubPathSum(-10));
+        Assertions.assertFalse(tree.hasSubPathSum(0));
+        Assertions.assertFalse(tree.hasSubPathSum(-10));
 
         // Challenge 3: Given a binary tree that can contain positive or negative keys,
         // design an algorithm to count the number of paths that sum to a given value.
         // The path does not need to start or end at the root or a leaf, but it must
         // go downwards from parent to child.
         // Now we are in a position to count paths
-        Assert.assertEquals(2, tree.countPathsWithSum(8));
-        Assert.assertEquals(2, tree.countPathsWithSum(7));
+        Assertions.assertEquals(2, tree.countPathsWithSum(8));
+        Assertions.assertEquals(2, tree.countPathsWithSum(7));
     }
 
 }

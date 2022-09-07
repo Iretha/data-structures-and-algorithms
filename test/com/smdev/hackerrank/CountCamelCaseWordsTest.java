@@ -1,20 +1,20 @@
 package com.smdev.hackerrank;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * https://www.hackerrank.com/challenges/camelcase/problem
  */
-public class CountCamelCaseWordsTest {
+class CountCamelCaseWordsTest {
 
     @Test
-    public void testCamelCase() {
-        Assert.assertEquals(0, CountCamelCaseWords.camelcase(null));
-        Assert.assertEquals(0, CountCamelCaseWords.camelcase(""));
-        Assert.assertEquals(0, CountCamelCaseWords.camelcase("        "));
+    void testCamelCase() {
+        Assertions.assertEquals(0, CountCamelCaseWords.camelcase(null));
+        Assertions.assertEquals(0, CountCamelCaseWords.camelcase(""));
+        Assertions.assertEquals(0, CountCamelCaseWords.camelcase("        "));
 
-        Assert.assertEquals(1, CountCamelCaseWords.camelcase("save"));
-        Assert.assertEquals(5, CountCamelCaseWords.camelcase("saveChangesInTheEditor"));
+        Assertions.assertEquals(1, CountCamelCaseWords.camelcase("save"));
+        Assertions.assertEquals(5, CountCamelCaseWords.camelcase("saveChangesInTheEditor"));
     }
 }

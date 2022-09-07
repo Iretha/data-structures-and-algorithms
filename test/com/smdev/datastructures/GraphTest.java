@@ -1,16 +1,16 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class GraphTest {
+class GraphTest {
     private Graph graph;
 
-    @Before
-    public void setup(){
+    @BeforeEach
+    void setup(){
         graph = new Graph(8);
         graph.addEdge(0, 1);
         graph.addEdge(1, 0);
@@ -33,24 +33,24 @@ public class GraphTest {
     }
 
     @Test
-    public void testBFS() {
+    void testBFS() {
         List<Integer> bfsPath = graph.bfs(0);
 
         List<Integer> bfxExp = List.of(0, 1, 6, 3, 4, 5, 2, 7);
-        Assert.assertEquals(bfxExp, bfsPath);
+        Assertions.assertEquals(bfxExp, bfsPath);
 
         List<Integer> bfxNotExp = List.of(0, 1, 6, 3, 4, 5, 7, 2);
-        Assert.assertNotEquals(bfxNotExp, bfsPath);
+        Assertions.assertNotEquals(bfxNotExp, bfsPath);
     }
 
     @Test
-    public void testDFS() {
+    void testDFS() {
         List<Integer> path = graph.dfs(0);
 
         List<Integer> expected = List.of(0, 3, 5, 2, 7, 6, 4, 1);
-        Assert.assertEquals(expected, path);
+        Assertions.assertEquals(expected, path);
 
         List<Integer> notExpected = List.of(0, 1, 5, 2, 7, 3, 6, 4);
-        Assert.assertNotEquals(notExpected, path);
+        Assertions.assertNotEquals(notExpected, path);
     }
 }

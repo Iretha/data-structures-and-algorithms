@@ -1,44 +1,44 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class QueueTest {
+class QueueTest {
 
     private Queue queue;
 
-    @Before
-    public void SetUp() {
+    @BeforeEach
+    void setUp() {
         queue = new Queue();
     }
 
     @Test
-    public void insert_delete_peek() {
-        Assert.assertEquals(null, queue.peek());
-        Assert.assertEquals(null, queue.remove());
+    void insert_delete_peek() {
+        Assertions.assertEquals(null, queue.peek());
+        Assertions.assertEquals(null, queue.remove());
 
         queue.add(1);
         queue.add(2);
         queue.add(3);
 
-        Assert.assertEquals(1, queue.peek());
-        Assert.assertEquals(1, queue.remove());
-        Assert.assertEquals(2, queue.peek());
+        Assertions.assertEquals(1, queue.peek());
+        Assertions.assertEquals(1, queue.remove());
+        Assertions.assertEquals(2, queue.peek());
     }
 
     @Test
-    public void isEmpty(){
-        Assert.assertTrue(queue.isEmpty());
+    void isEmpty(){
+        Assertions.assertTrue(queue.isEmpty());
 
         queue.add(1);
-        Assert.assertFalse(queue.isEmpty());
+        Assertions.assertFalse(queue.isEmpty());
 
         queue.peek();
-        Assert.assertFalse(queue.isEmpty());
+        Assertions.assertFalse(queue.isEmpty());
 
         queue.remove();
-        Assert.assertTrue(queue.isEmpty());
+        Assertions.assertTrue(queue.isEmpty());
     }
 
 }

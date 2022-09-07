@@ -1,19 +1,19 @@
 package com.smdev.datastructures;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class GraphAdjTest {
+class GraphAdjTest {
 
     private GraphAdjList undirectedGraph;
 
     private GraphAdjList directedGraph;
 
-    @Before
-    public void setUp(){
+    @BeforeEach
+    void setUp(){
         undirectedGraph = new GraphAdjList(8);
         undirectedGraph.addEdge(0, 1);
         undirectedGraph.addEdge(1, 0);
@@ -47,7 +47,7 @@ public class GraphAdjTest {
     }
 
     @Test
-    public void testBreadthFirstSearch() {
+    void testBreadthFirstSearch() {
         System.out.println("Undirected: Following is Breadth First Traversal "+
                 "(starting from vertex 0)");
 
@@ -58,7 +58,7 @@ public class GraphAdjTest {
     }
 
     @Test
-    public void testBreadthFirstSearchDirected() {
+    void testBreadthFirstSearchDirected() {
         System.out.println("Directed: Following is Breadth First Traversal "+
                 "(starting from vertex 0)");
 
@@ -69,7 +69,7 @@ public class GraphAdjTest {
     }
 
     @Test
-    public void testDepthFirstSearch() {
+    void testDepthFirstSearch() {
         System.out.println("Undirected: Following is Depth First Traversal "+
                 "(starting from vertex 0)");
 
@@ -80,7 +80,7 @@ public class GraphAdjTest {
     }
 
     @Test
-    public void testDepthFirstSearchDirected() {
+    void testDepthFirstSearchDirected() {
         System.out.println("Directed: Following is Depth First Traversal "+
                 "(starting from vertex 0)");
 

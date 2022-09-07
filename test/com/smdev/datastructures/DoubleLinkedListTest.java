@@ -1,88 +1,88 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class DoubleLinkedListTest {
+class DoubleLinkedListTest {
 
     private DoubleLinkedList linkedList;
 
-    @Before
-    public void SetUp() {
+    @BeforeEach
+    void setUp() {
         linkedList = new DoubleLinkedList<>();
     }
 
     @Test
-    public void addFront() {
+    void addFront() {
         linkedList.addFront(1);
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-        Assert.assertEquals(3, linkedList.getFirst());
-        Assert.assertEquals(1, linkedList.getLast());
+        Assertions.assertEquals(3, linkedList.getFirst());
+        Assertions.assertEquals(1, linkedList.getLast());
     }
 
     @Test
-    public void getFirst() {
+    void getFirst() {
         linkedList.addFront(1);
-        Assert.assertEquals(1, linkedList.getFirst());
+        Assertions.assertEquals(1, linkedList.getFirst());
     }
 
     @Test
-    public void getLast() {
+    void getLast() {
         linkedList.addFront(1);
         linkedList.addFront(2);
         linkedList.addFront(3);
 
-        Assert.assertEquals(1, linkedList.getLast());
+        Assertions.assertEquals(1, linkedList.getLast());
     }
 
     @Test
-    public void addBack() {
+    void addBack() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
 
-        Assert.assertEquals(1, linkedList.getFirst());
-        Assert.assertEquals(3, linkedList.getLast());
+        Assertions.assertEquals(1, linkedList.getFirst());
+        Assertions.assertEquals(3, linkedList.getLast());
     }
 
     @Test
-    public void size() {
-        Assert.assertEquals(0, linkedList.size());
+    void size() {
+        Assertions.assertEquals(0, linkedList.size());
         linkedList.addBack(1);
-        Assert.assertEquals(1, linkedList.size());
+        Assertions.assertEquals(1, linkedList.size());
         linkedList.addBack(2);
-        Assert.assertEquals(2, linkedList.size());
+        Assertions.assertEquals(2, linkedList.size());
     }
 
     @Test
-    public void clear() {
+    void clear() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
 
         linkedList.clear();
 
-        Assert.assertEquals(0, linkedList.size());
+        Assertions.assertEquals(0, linkedList.size());
     }
 
     @Test
-    public void deleteValue() {
+    void deleteValue() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
 
         linkedList.deleteValue(2);
 
-        Assert.assertEquals(2, linkedList.size());
-        Assert.assertEquals(1, linkedList.getFirst());
-        Assert.assertEquals(3, linkedList.getLast());
+        Assertions.assertEquals(2, linkedList.size());
+        Assertions.assertEquals(1, linkedList.getFirst());
+        Assertions.assertEquals(3, linkedList.getLast());
     }
 
     @Test
-    public void removeFront() {
+    void removeFront() {
         linkedList.addFront(1);
         linkedList.addFront(2);
         linkedList.addFront(3);
@@ -90,11 +90,11 @@ public class DoubleLinkedListTest {
         linkedList.removeFront();
         linkedList.removeFront();
 
-        Assert.assertEquals(1, linkedList.getFirst());
+        Assertions.assertEquals(1, linkedList.getFirst());
     }
 
     @Test
-    public void removeBack() {
+    void removeBack() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
@@ -102,19 +102,19 @@ public class DoubleLinkedListTest {
         linkedList.removeBack();
         linkedList.removeBack();
 
-        Assert.assertEquals(1, linkedList.getFirst());
+        Assertions.assertEquals(1, linkedList.getFirst());
     }
 
     @Test
-    public void contains() {
+    void contains() {
         linkedList.addBack(1);
         linkedList.addBack(2);
         linkedList.addBack(3);
 
         linkedList.deleteValue(2);
 
-        Assert.assertTrue(linkedList.contains(1));
-        Assert.assertTrue(!linkedList.contains(2));
-        Assert.assertTrue(linkedList.contains(3));
+        Assertions.assertTrue(linkedList.contains(1));
+        Assertions.assertTrue(!linkedList.contains(2));
+        Assertions.assertTrue(linkedList.contains(3));
     }
 }

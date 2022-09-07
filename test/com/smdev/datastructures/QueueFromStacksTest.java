@@ -1,59 +1,59 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-public class QueueFromStacksTest {
+class QueueFromStacksTest {
 
     @Test
-    public void testPush(){
+    void testPush(){
         QueueFromStacks que = new QueueFromStacks();
-        Assert.assertTrue(que.size() == 0);
+        Assertions.assertTrue(que.size() == 0);
 
         que.push(1);
-        Assert.assertTrue(que.size() == 1);
+        Assertions.assertTrue(que.size() == 1);
 
         que.push(2);
-        Assert.assertTrue(que.size() == 2);
+        Assertions.assertTrue(que.size() == 2);
 
         que.push(3);
-        Assert.assertTrue(que.size() == 3);
+        Assertions.assertTrue(que.size() == 3);
     }
 
     @Test
-    public void testPeek(){
+    void testPeek(){
         QueueFromStacks que = new QueueFromStacks();
-        Assert.assertEquals(0, que.peek());
+        Assertions.assertEquals(0, que.peek());
 
         que.push(1);
         que.push(2);
         que.push(3);
-        Assert.assertEquals(1, que.peek());
-        Assert.assertTrue(que.size() == 3);
+        Assertions.assertEquals(1, que.peek());
+        Assertions.assertTrue(que.size() == 3);
     }
 
     @Test
-    public void testPop(){
+    void testPop(){
         QueueFromStacks que = new QueueFromStacks();
         que.push(1);
         que.push(2);
         que.push(3);
-        Assert.assertTrue(que.size() == 3);
+        Assertions.assertTrue(que.size() == 3);
 
         int num = que.pop();
-        Assert.assertTrue(num == 1);
-        Assert.assertTrue(que.size() == 2);
+        Assertions.assertTrue(num == 1);
+        Assertions.assertTrue(que.size() == 2);
 
         num = que.pop();
-        Assert.assertTrue(num == 2);
-        Assert.assertTrue(que.size() == 1);
+        Assertions.assertTrue(num == 2);
+        Assertions.assertTrue(que.size() == 1);
 
         num = que.pop();
-        Assert.assertTrue(num == 3);
-        Assert.assertTrue(que.size() == 0);
+        Assertions.assertTrue(num == 3);
+        Assertions.assertTrue(que.size() == 0);
 
         num = que.pop();
-        Assert.assertTrue(num == 0);
-        Assert.assertTrue(que.size() == 0);
+        Assertions.assertTrue(num == 0);
+        Assertions.assertTrue(que.size() == 0);
     }
 }

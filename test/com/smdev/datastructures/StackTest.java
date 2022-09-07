@@ -1,44 +1,44 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class StackTest {
+class StackTest {
 
     private Stack stack;
 
-    @Before
-    public void SetUp() {
+    @BeforeEach
+    void setUp() {
         stack = new Stack();
     }
 
     @Test
-    public void push_peek_pop() {
-        Assert.assertEquals(null, stack.peek());
-        Assert.assertEquals(null, stack.pop());
+    void push_peek_pop() {
+        Assertions.assertEquals(null, stack.peek());
+        Assertions.assertEquals(null, stack.pop());
 
         stack.push(1);
         stack.push(2);
         stack.push(3);
 
-        Assert.assertEquals(3, stack.peek());
-        Assert.assertEquals(3, stack.pop());
-        Assert.assertEquals(2, stack.peek());
+        Assertions.assertEquals(3, stack.peek());
+        Assertions.assertEquals(3, stack.pop());
+        Assertions.assertEquals(2, stack.peek());
     }
 
     @Test
-    public void isEmpty(){
-        Assert.assertTrue(stack.isEmpty());
+    void isEmpty() {
+        Assertions.assertTrue(stack.isEmpty());
 
         stack.push(1);
-        Assert.assertFalse(stack.isEmpty());
+        Assertions.assertFalse(stack.isEmpty());
 
         stack.peek();
-        Assert.assertFalse(stack.isEmpty());
+        Assertions.assertFalse(stack.isEmpty());
 
         stack.pop();
-        Assert.assertTrue(stack.isEmpty());
+        Assertions.assertTrue(stack.isEmpty());
     }
 
 }

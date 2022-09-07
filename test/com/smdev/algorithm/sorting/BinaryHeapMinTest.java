@@ -1,16 +1,15 @@
 package com.smdev.algorithm.sorting;
 
-import com.smdev.algorithm.sorting.BinaryHeapMin;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class BinaryHeapMinTest {
+class BinaryHeapMinTest {
 
     private BinaryHeapMin minHeap;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         minHeap = new BinaryHeapMin();
         minHeap.insert(6);
         minHeap.insert(5);
@@ -21,23 +20,23 @@ public class BinaryHeapMinTest {
     }
 
     @Test
-    public void testInsert() {
+    void testInsert() {
         int idx = 0;
-        Assert.assertEquals(1, minHeap.getByIndex(idx++));
-        Assert.assertEquals(3, minHeap.getByIndex(idx++));
-        Assert.assertEquals(2, minHeap.getByIndex(idx++));
-        Assert.assertEquals(6, minHeap.getByIndex(idx++));
-        Assert.assertEquals(4, minHeap.getByIndex(idx++));
-        Assert.assertEquals(5, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(1, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(3, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(2, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(6, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(4, minHeap.getByIndex(idx++));
+        Assertions.assertEquals(5, minHeap.getByIndex(idx++));
     }
 
     @Test
-    public void testExtractMin() {
-        Assert.assertEquals(1, minHeap.extractMin());
-        Assert.assertEquals(2, minHeap.extractMin());
-        Assert.assertEquals(3, minHeap.extractMin());
-        Assert.assertEquals(4, minHeap.extractMin());
-        Assert.assertEquals(5, minHeap.extractMin());
-        Assert.assertEquals(6, minHeap.extractMin());
+    void testExtractMin() {
+        Assertions.assertEquals(1, minHeap.extractMin());
+        Assertions.assertEquals(2, minHeap.extractMin());
+        Assertions.assertEquals(3, minHeap.extractMin());
+        Assertions.assertEquals(4, minHeap.extractMin());
+        Assertions.assertEquals(5, minHeap.extractMin());
+        Assertions.assertEquals(6, minHeap.extractMin());
     }
 }

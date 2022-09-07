@@ -1,19 +1,19 @@
 package com.smdev.datastructures;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BSTTest {
+
+class BSTTest {
 
     @Test
-    public void testInsert() {
+    void testInsert() {
         BST tree = new BST();
         tree.insert(5);
         tree.insert(3);
@@ -24,17 +24,17 @@ public class BSTTest {
         tree.insert(8);
 
         List<Integer> inorder = tree.inorder();
-        Assert.assertArrayEquals(new Integer[]{2, 3, 4, 5, 6, 7, 8}, inorder.toArray());
+        Assertions.assertArrayEquals(new Integer[]{2, 3, 4, 5, 6, 7, 8}, inorder.toArray());
 
         List<Integer> preorder = tree.preorder();
-        Assert.assertArrayEquals(new Integer[]{5, 3, 2, 4, 7, 6, 8}, preorder.toArray());
+        Assertions.assertArrayEquals(new Integer[]{5, 3, 2, 4, 7, 6, 8}, preorder.toArray());
 
         List<Integer> postorder = tree.postorder();
-        Assert.assertArrayEquals(new Integer[]{2, 4, 3, 6, 8, 7, 5}, postorder.toArray());
+        Assertions.assertArrayEquals(new Integer[]{2, 4, 3, 6, 8, 7, 5}, postorder.toArray());
     }
 
     @Test
-    public void testInOrder() {
+    void testInOrder() {
         BST tree = new BST();
         tree.insert(9);
         tree.insert(5);
@@ -49,7 +49,7 @@ public class BSTTest {
     }
 
     @Test
-    public void testPostOrder() {
+    void testPostOrder() {
         BST tree = new BST();
         tree.insert(9);
         tree.insert(5);
@@ -64,7 +64,7 @@ public class BSTTest {
     }
 
     @Test
-    public void testInOrderLinear() {
+    void testInOrderLinear() {
         BST tree = new BST();
         tree.insert(9);
         tree.insert(5);
@@ -82,7 +82,7 @@ public class BSTTest {
     }
 
     @Test
-    public void testLookup() {
+    void testLookup() {
         BST tree = new BST();
         assertFalse(tree.lookup(5));
 
@@ -99,7 +99,7 @@ public class BSTTest {
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         BST tree = new BST();
         tree.insert(5);
         tree.insert(3);

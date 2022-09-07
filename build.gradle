@@ -1,9 +1,17 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 group = 'com.smdev'
 version = '0.0.1'
-sourceCompatibility = 1.11
-targetCompatibility = 1.11
+sourceCompatibility = 1.15
+targetCompatibility = 1.15
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenCentral()
@@ -25,15 +33,19 @@ sourceSets {
 
 dependencies {
     // Lombok
-    annotationProcessor('org.projectlombok:lombok:1.18.8')
-    compileOnly('org.projectlombok:lombok:1.18.8')
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     //Apache
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
-    testCompileOnly 'junit:junit:4.12'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.3.1'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
 }
