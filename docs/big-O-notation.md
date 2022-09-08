@@ -18,7 +18,7 @@ When it comes to speed, it is also called **"time complexity"** of the algorithm
 
 ## Complexity types:
 ### Constant Time - O(1) : Random Access (By Index)
-The fastest one. It always takes a constant time to do something, regardless the the number of the elements in the collection. 
+The fastest one. It always takes a constant time to do something, regardless the number of the elements in the collection. 
 
 I.e. To access to element in an array by it's index.
 
